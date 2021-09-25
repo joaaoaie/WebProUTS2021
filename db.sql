@@ -86,4 +86,4 @@ INSERT INTO berita VALUES
     <li><strong>Bumbu kacang</strong>: goreng semua bawang dan cabai merah sampai layu. Blender kacang tanah goreng dengan bumbu dan air secukupnya. Masak di wajan.</li>
     <li>Tambahkan gula merah, gula pasir, garam, dan daun jeruk. Aduk rata. Koreksi rasa. Masak sampai bumbu meletup-letup. Tambahkan sedikit kecap. Aduk.</li>
     <li>Sajikan cilok kanji dengan bumbu kacang.</li>
-  </ol> ");
+  </ol>");
