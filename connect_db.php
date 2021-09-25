@@ -5,7 +5,7 @@
 
     $host = "localhost";
     $username = "root";
-    $dbname = "";
+    $dbname = "webuts";
     $password = "";
 
     $base_url = '';
