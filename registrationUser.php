@@ -62,10 +62,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <div style="float: right;">
-                            <h5>Already Have An Account?</h5>
-                            <a type="button" class="btn btn-primary" href="./loginUser.php">Login</button>
-                        </div>
+                        <h5>Already Have An Account?</h5>
+                        <a type="button" class="btn btn-primary" href="./loginUser.php">Login</a>
                     </div>
                 </div>
             </div>               

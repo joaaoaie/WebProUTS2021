@@ -1,4 +1,4 @@
-<!-- <?php include './connect_db.php'; ?> -->
+<?php include './connect_db.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +53,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <div style="float: right;">
-                            <h5>Doesn't Have An Account Yet?</h5>
-                            <a type="button" class="btn btn-primary" href="./registrationUser.php">Register</button>
-                        </div>
+                        <h5>Doesn't Have An Account Yet?</h5>
+                        <a type="button" class="btn btn-primary" href="./registrationUser.php">Register</a>
                     </div>
                 </div>
             </div>               
