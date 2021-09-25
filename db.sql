@@ -40,7 +40,7 @@ CREATE TABLE komentar (
 );
 
 INSERT INTO user VALUES
-  ("admin", "admin@admin.com", "3b41bf6b2d28163ee961d24d88c12bb5", "admin", NULL, "my", "admin", "2021-09-25", "male");
+  ("admin", "admin@admin.com", "3b41bf6b2d28163ee961d24d88c12bb5", "admin", NULL, "my", "admin", "2021-09-25", "male"); /* iamadminadmin */
 
 INSERT INTO berita VALUES
   ("B0001", "Resep Cilok Kanji Tanpa Daging Pakai Bumbu Kacang, Empuk dan Tidak Alot", "Food", NULL, "Yuharrani Aisyah", "2021-09-25",
