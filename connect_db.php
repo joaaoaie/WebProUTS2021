@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     if(!isset($_SESSION)){ 
         session_start();
     };
@@ -8,6 +8,6 @@
     $dbname = "webuts";
     $password = "";
 
-    $base_url = '';
+    $base_url = './index.php';
     $db = new PDO("mysql:host=$host;dbname=$dbname;", $username, $password);
-?> -->
+?>
