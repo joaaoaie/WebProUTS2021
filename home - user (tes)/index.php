@@ -103,6 +103,25 @@
     </style>
 </head>
 
+<body >
+  <header style="margin: none; padding: none;">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+          <a class="navbar-brand" href="#">Tes</a>
+				</div>
+				<ul class="navbar-nav navbar-right nav" style="margin-right: 20px;">
+          <?php error_reporting(0);if($_SESSION['id_user'] == null) { ?>
+          <a href="./login/loginUser.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;">Login</a>
+				<?php } else {?>
+          <a href="" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;background-color: red;">Log out</a>
+          <?php } ?>
+      </ul>
+			</div>
+		</nav>
+	</header>
+</body>
+
 <!-- Parameter GET buat category -->
 <?php error_reporting(0); $kategori =  $_GET['kategori']; ?>
 
@@ -155,7 +174,7 @@
             foreach($berita as $news) { ?>
               <div id=<?=$news['idBerita']?> class="container">
                 <img style="width: 100%; margin-top: 10px; margin-right: auto;" src='./image/News2.jpg'/>
-                <a style="font-size: xx-large;"><?=$news['judul']?></a><br>
+                <a href="" style="font-size: xx-large;"><?=$news['judul']?></a><br>
                 <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
                 <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
               </div>
