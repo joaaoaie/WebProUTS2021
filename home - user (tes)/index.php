@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../assets/main.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/main.css" type="text/css"/>
     <style>
       [class*="col-"] {
           width: 100%;
@@ -149,7 +149,7 @@
             if($kategori == $news['kategori']) {?>
             <div id=<?=$news['idBerita']?> class="container">
             <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
-            <a style="font-size: xx-large;"><?=$news['judul']?></a><br>
+            <a href="./berita/index.php?idBerita=<?=$news['idBerita']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
             <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
             <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
           </div>
@@ -158,7 +158,7 @@
             foreach($berita as $news) { ?>
               <div id=<?=$news['idBerita']?> class="container">
                 <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
-                <a href="" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+                <a href="./berita/index.php?idBerita=<?=$news['idBerita']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
                 <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
                 <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
               </div>
