@@ -76,7 +76,7 @@
 
         #cf {
           position:relative;
-          width: 1200px;
+          width: 100%;
           height: 600px;
           margin:0 auto;
         }
@@ -108,51 +108,29 @@
     </style>
 </head>
 
-<body class="col-12 col-m-12">
-  <header style="margin: none; padding: none;" class="col-12 col-m-12">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-          <a class="navbar-brand" href="#">Tes</a>
-				</div>
-				<ul class="navbar-nav navbar-right nav" style="margin-right: 20px;">
-          <?php error_reporting(0);if($_SESSION['id_user'] == null) { ?>
-          <a href="./Login-Regis/loginUser.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;">Login</a>
-				<?php } else {?>
-          <a href="./Login-Regis/logout.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;background-color: red;">Log out</a>
-          <?php } ?>
-      </ul>
-			</div>
-		</nav>
-	</header>
-</body>
-
 <!-- Parameter GET buat category -->
 <?php error_reporting(0); $kategori =  $_GET['kategori']; ?>
 
-<!-- style="max-width: 100%;"  -->
-
 <!-- Gambar di HOME -->
 <body class="col-12 col-m-12">
-  <div id="cf" class="col-12 col-m-12">
+  <div id="cf"  style="flex-direction: column;justify-content: center;align-items: center;display: flex;">
     <?php if($kategori == null) { ?>
-      <img class="bottom img-fluid" alt="Responsive image" src='./image/News2.jpg'/>
-      <img class="top img-fluid" alt="Responsive image" src='./image/News1.jpg'/>
+      <img class="bottom img-fluid" src='./image/News2.jpg'/>
+      <img class="top img-fluid" src='./image/News1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Politik") { ?>
-      <img class="bottom img-fluid" alt="Responsive image"  src='./image/Politik2.jpg'/>
-      <img class="top img-fluid" alt="Responsive image" src='./image/Politik1.jpg'/>
+      <img class="bottom img-fluid" src='./image/Politik2.jpg'/>
+      <img class="top img-fluid" src='./image/Politik1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Sports") { ?>
-      <img class="bottom img-fluid" alt="Responsive image" src='./image/Sports2.jpg'/>
-      <img class="top img-fluid" alt="Responsive image" src='./image/Sports3.jpg'/>
+      <img class="bottom img-fluid" src='./image/Sports2.jpg'/>
+      <img class="top img-fluid" src='./image/Sports3.jpg'/>
     <?php } ?>
     <?php if($kategori == "Food") { ?>
-      <img class="bottom img-fluid" alt="Responsive image" src='./image/Food2.jpg'/>
-      <img class="top img-fluid" alt="Responsive image" src='./image/Food1.jpg'/>
+      <img class="bottom img-fluid" src='./image/Food2.jpg'/>
+      <img class="top img-fluid" src='./image/Food1.jpg'/>
     <?php } ?>
   </div>
-  
 </body>
 
 <body class="col-12 col-m-12">
