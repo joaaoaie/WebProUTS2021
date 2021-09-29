@@ -67,61 +67,6 @@ header>h1 {
     margin: 10px;
 } */
 
-/* @keyframes cfFadeInOut {
-    0% {
-      opacity:1;
-    }
-    17% {
-      opacity:1;
-    }
-    25% {
-      opacity:0;
-    }
-    92% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  #cf img:nth-of-type(1) {
-    animation-delay: 6s;
-  }
-  #cf img:nth-of-type(2) {
-    animation-delay: 4s;
-  }
-  #cf img:nth-of-type(3) {
-    animation-delay: 2s;
-  }
-  #cf img:nth-of-type(4) {
-    animation-delay: 0s;
-  }
-
-#cf {
-    position:relative;
-    margin:0 auto;
-  }
-  
-#cf img {
-    position:absolute;
-    left:0;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-    width : 300px;
-    height: 200px;
-}
-
-#cf img.top {
-    animation-name: cfFadeInOut;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 8s;
-    animation-direction: alternate;
-    } */
-
 .container {
       box-shadow: 4px 4px grey;
       width: 68.5%;
@@ -129,21 +74,21 @@ header>h1 {
       border-radius: 5px;
       padding: 0px;
       padding-left: 15px;
-      margin: 5px;
+      margin: 20px;
+      padding-right: 13px;
       text-align: left;
       background-color: white;
 }
 
 .sorting {
   text-align: center;
+  background-color: white;
 }
 
-.sorting>h4 {
-  color: red;
-  display: inline-block;
-  padding: 20px;
-}
-
-.sorting>h4:hover {
-  color: white;
-}
+.in-middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+  }
