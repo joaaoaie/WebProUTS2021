@@ -1,4 +1,14 @@
-<?php include './fetchBerita.php' ?>
+<?php
+  // include './fetchBerita.php'
+  include '../connect_db.php';
+  
+  $idBerita = $_GET['idBerita'];
+  $queryBerita = $db->query("SELECT * FROM berita WHERE idBerita = :idBerita");
+  $queryBerita->bindParam(":idBerita", $idBerita);
+  $queryBerita->execute();
+
+  $berita = $queryBerita->fetch();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
