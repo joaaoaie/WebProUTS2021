@@ -88,7 +88,7 @@
           -moz-transition: opacity 2s ease-in-out;
           -o-transition: opacity 2 ease-in-out;
           transition: opacity 2s ease-in-out;
-          width: 100%;
+          max-width: 100%;
           height: 100%;
         }
 
@@ -100,11 +100,16 @@
         animation-direction: alternate;
         }
         
+        img {
+          width:100%;
+          height:auto;
+          margin: auto;
+        }
     </style>
 </head>
 
-<body >
-  <header style="margin: none; padding: none;">
+<body class="col-12 col-m-12">
+  <header style="margin: none; padding: none;" class="col-12 col-m-12">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -112,9 +117,9 @@
 				</div>
 				<ul class="navbar-nav navbar-right nav" style="margin-right: 20px;">
           <?php error_reporting(0);if($_SESSION['id_user'] == null) { ?>
-          <a href="./login/loginUser.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;">Login</a>
+          <a href="./Login-Regis/loginUser.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;">Login</a>
 				<?php } else {?>
-          <a href="" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;background-color: red;">Log out</a>
+          <a href="./Login-Regis/logout.php" class="btn btn-primary" style="margin-top: 6.5px;margin-left: 950px;background-color: red;">Log out</a>
           <?php } ?>
       </ul>
 			</div>
@@ -125,26 +130,29 @@
 <!-- Parameter GET buat category -->
 <?php error_reporting(0); $kategori =  $_GET['kategori']; ?>
 
+<!-- style="max-width: 100%;"  -->
+
 <!-- Gambar di HOME -->
 <body class="col-12 col-m-12">
   <div id="cf" class="col-12 col-m-12">
     <?php if($kategori == null) { ?>
-      <img class="bottom" style="max-width: 100%;" src='./image/News2.jpg'/>
-      <img class="top" style="max-width: 100%;" src='./image/News1.jpg'/>
+      <img class="bottom img-fluid" alt="Responsive image" src='./image/News2.jpg'/>
+      <img class="top img-fluid" alt="Responsive image" src='./image/News1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Politik") { ?>
-      <img class="bottom" style="max-width: 100%;" src='./image/Politik2.jpg'/>
-      <img class="top" style="max-width: 100%;" src='./image/Politik1.jpg'/>
+      <img class="bottom img-fluid" alt="Responsive image"  src='./image/Politik2.jpg'/>
+      <img class="top img-fluid" alt="Responsive image" src='./image/Politik1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Sports") { ?>
-      <img class="bottom" style="max-width: 100%;" src='./image/Sports2.jpg'/>
-      <img class="top" style="max-width: 100%;" src='./image/Sports3.jpg'/>
+      <img class="bottom img-fluid" alt="Responsive image" src='./image/Sports2.jpg'/>
+      <img class="top img-fluid" alt="Responsive image" src='./image/Sports3.jpg'/>
     <?php } ?>
     <?php if($kategori == "Food") { ?>
-      <img class="bottom" style="max-width: 100%;" src='./image/Food2.jpg'/>
-      <img class="top" style="max-width: 100%;" src='./image/Food1.jpg'/>
+      <img class="bottom img-fluid" alt="Responsive image" src='./image/Food2.jpg'/>
+      <img class="top img-fluid" alt="Responsive image" src='./image/Food1.jpg'/>
     <?php } ?>
   </div>
+  
 </body>
 
 <body class="col-12 col-m-12">
@@ -157,14 +165,12 @@
   </div>
 
   <!-- Buat nampilin berita -->
-  <div class="col-12 col-m-12">
-    <div class="col-3 col-m-3"></div>
-    <div id="berita" class="col-9 col-m-9">
+    <div id="berita" style="margin: auto;flex-direction: column; justify-content: center; align-items: center; display: flex;">
       <?php if($kategori != null) { 
           foreach($berita as $news) { 
             if($kategori == $news['kategori']) {?>
             <div id=<?=$news['idBerita']?> class="container">
-            <img style="width: 100%; margin-top: 10px; margin-right: auto;" src='./image/News2.jpg'/>
+            <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
             <a style="font-size: xx-large;"><?=$news['judul']?></a><br>
             <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
             <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
@@ -173,7 +179,7 @@
         } else { 
             foreach($berita as $news) { ?>
               <div id=<?=$news['idBerita']?> class="container">
-                <img style="width: 100%; margin-top: 10px; margin-right: auto;" src='./image/News2.jpg'/>
+                <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
                 <a href="" style="font-size: xx-large;"><?=$news['judul']?></a><br>
                 <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
                 <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
@@ -181,7 +187,7 @@
           <?php }
             } ?>
     </div>
-  </div>
+
 
 </body>
 
