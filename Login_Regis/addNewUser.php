@@ -18,6 +18,9 @@
     $salt = "user";
 
     if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != ""){
+        if($lastName == "")
+            $lastName = NULL;
+        
         $encrypted_password_salt = md5($pass . $salt);
         foreach($a as $userAcc){
             if($userAcc['username'] == $username){ //username
@@ -48,29 +51,5 @@
         $_SESSION['error_login_message'] = "Fill all required fields";
         header("location: $base_url/registrationUser.php");
     }
-
-
-
-
-
-
-
-    // Melakukan query ke database
-    $queryInsert = $db->prepare("INSERT into user(username,email,pass,firstName,lastName,tanggalLahir,jenisKelamin) 
-                                 values(:username,:email,:pass,:first_name,:last_name,:tanggalLahir,:jenisKelamin)");
-    // Memasukkan nilai ke dalam query
-    $queryInsert->bindParam(':username', $username);
-    $queryInsert->bindParam(':email', $email);
-    $queryInsert->bindParam(':pass', $pass);
-    $queryInsert->bindParam(':firstName', $firstName);
-    $queryInsert->bindParam(':lastName', $lastName);
-    $queryInsert->bindParam(':tanggalLahir', $tanggalLahir);
-    $queryInsert->bindParam(':jenisKelamin', $jenisKelamin);
-    // Execute query
-    $success = $queryInsert->execute();
-
-    if($success){
-        header("location: http://localhost/WEB/UTS/base.php");
-    }
-?>
+?>  
 
