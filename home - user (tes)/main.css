@@ -84,3 +84,11 @@ header>h1 {
   text-align: center;
   background-color: white;
 }
+
+.in-middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+  }
