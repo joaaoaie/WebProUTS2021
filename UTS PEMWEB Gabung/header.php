@@ -41,18 +41,20 @@
         <i class="fas fa-shopping-cart"></i>
       </a>
 
-    <!-- Avatar -->
-    <a>
-      <img
-        src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-        class="rounded-circle"
-        style="height: 30px;"
-        alt=""
-        loading="lazy"
-      />
-    </a>
+      <?php if(!isset($_SESSION)) { ?>
 
-      <a href="<?= $base_url?>act/logout.php" class="btn btn-danger" style="float: right; padding: 10px; margin-left: 10px;" >Log Out</a>
+        <!-- Avatar -->
+        <a>
+          <img
+            src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+            class="rounded-circle"
+            style="height: 30px;"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        <a href="<?= $base_url?>act/logout.php" class="btn btn-danger" style="float: right; padding: 10px; margin-left: 10px;" >Log Out</a>
+      <?php } ?>
     </div>
     <!-- Right elements -->
   </div>
