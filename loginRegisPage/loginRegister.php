@@ -16,12 +16,12 @@
     <body>
         <?php
             if(!isset($_SESSION['id_user']))
-                include 'loginUser.php';
+                include './loginUser.php';
             else{
                 if($_SESSION['admin'])
-                    include "base.php"; //Admin View - CRUD
+                    include "./base.php"; //Admin View - CRUD
                 else   
-                    include "base.php"; //User View - View Only
+                    include "./base.php"; //User View - View Only
             }
         ?>
     </body>

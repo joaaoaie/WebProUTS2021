@@ -28,11 +28,11 @@
                 <div class="modal-content">
                     <div class="modal-header"> 
                         <div style="float: left;">
-                            <h4>User Registration</h4>
+                            <h2><b>User Registration</b></h2>
                         </div>
                     </div>
                     <div class="modal-body">
-                        <form id="form-login-submit" class="form-login" method="POST" action="./addNewUser.php"> <!-- action="<?= $base_url ?>/loginUserCek.php" -->
+                        <form id="form-login-submit" class="form-login" method="POST" action="./addNewUser.php">
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
                                     <input type="text" class="form-control" name="firstName" placeholder="Masukkan First Name">
@@ -53,15 +53,18 @@
                                     <span style = "display: inline-block; width: 20px;"></span><input type = "radio" id = "gender">
                                         <label for="female">Female</label><br>  -->
                                 <!-- foto profil -->
-                                
-                                <div class="g-recaptcha" data-sitekey="6LeMIlEcAAAAAMD4rVJUQ8pWx5qT9FPyRSDVO5aV"
-                                     style="margin-bottom: 10px; margin-top: 3%"></div>
+                                <!-- RECAPTCHA DI BAWAH -->
+                                <!-- <div class="g-recaptcha" data-sitekey="6LeMIlEcAAAAAMD4rVJUQ8pWx5qT9FPyRSDVO5aV"
+                                     style="margin-bottom: 10px; margin-top: 3%">
+                                </div> -->
+                                <button style="margin-top: 3%" type="submit" class="btn btn-primary">Register</button>
+                                <a style="margin-top: 3%; margin-left: 3%;" type="button" class="btn btn-outline-primary" href="./homeUser.php">Cancel</a>
+
                                 <?php if(isset($_SESSION['error_login_message'])){ ?>
                                     <div class="alert alert-danger py-1" style="margin-top: 3%;" role="alert">
                                         <?= $_SESSION['error_login_message'] ?>
                                     </div>
-                                    <?php unset($_SESSION['error_login_message']); } ?>
-                                <button style="margin-top: 3%" type="submit" class="btn btn-primary">Register</button>
+                                <?php unset($_SESSION['error_login_message']); } ?>
                             </div>
                         </form>
                     </div>

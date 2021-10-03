@@ -23,10 +23,16 @@
 
         $encrypted_password_salt = md5($pass . $salt);
         foreach($a as $userAcc){
-            if($userAcc['username'] == $username){ //username
-                $_SESSION['error_login_message'] = "Username already exist";
+            if($userAcc['username'] == $username || $userAcc['email'] == $email){
+                if($userAcc['username'] == $username && $userAcc['email'] == $email)
+                    $_SESSION['error_login_message'] = "Username and Email already taken and used";
+                else if($userAcc['username'] == $username)
+                    $_SESSION['error_login_message'] = "Username already taken";
+                else
+                    $_SESSION['error_login_message'] = "Email already used";
+
                 $cek = false;
-                header("location: $base_url/registrationUser.php"); //masukkin ulang
+                header("location: $base_url/loginRegisPage/registrationUser.php");
                 break;
             }
         }
@@ -44,12 +50,12 @@
             $queryInsert->bindParam(':jenisKelamin', $jenisKelamin);
 
             $queryInsert->execute();
-            header("location: $base_url"); //User diminta untuk login setelah melakukan registrasi
+            header("location: $base_url/loginRegisPage/loginRegister.php"); //User diminta untuk login setelah melakukan registrasi
         }
     }
     else{
         $_SESSION['error_login_message'] = "Fill all required fields";
-        header("location: $base_url/registrationUser.php");
+        header("location: $base_url/loginRegisPage/registrationUser.php");
     }
 ?>
 
