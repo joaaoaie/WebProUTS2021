@@ -18,10 +18,14 @@
             if(!isset($_SESSION['id_user']))
                 include './loginUser.php';
             else{
-                if($_SESSION['admin'])
-                    header("location: $base_url"); //Admin View - CRUD
-                else   
-                    header("location: $base_url"); //User View - View Only
+                if($_SESSION['admin']){
+                    $id = $_GET['id'];
+                    header("location: $base_url/index.php?id={$id}"); //Admin View - CRUD
+                }
+                else{
+                    $id = $_GET['id'];
+                    header("location: $base_url/index.php?id={$id}"); //User View - View Only
+                }
             }
         ?>
     </body>

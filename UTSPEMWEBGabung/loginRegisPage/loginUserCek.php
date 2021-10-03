@@ -29,7 +29,7 @@
                 $_SESSION['admin'] = false;
 
             // header("location: $base_url/loginRegisPage/loginRegister.php"); 
-            header("location: $base_url/loginRegisPage/loginRegister.php");
+            header("location: $base_url/loginRegisPage/loginRegister.php?id={$emailUname}");
         }
         else{
             $SESSION['error_login_message'] = 'Password yang dimasukkan salah';
@@ -48,7 +48,7 @@
                 $_SESSION['admin'] = false;
 
             // header("location: $base_url/loginRegisPage/loginRegister.php"); 
-            header("location: $base_url/loginRegisPage/loginRegister.php");
+            header("location: $base_url/loginRegisPage/loginRegister.php?id={$emailUname}");
         }
         else{
             $SESSION['error_login_message'] = 'Password yang dimasukkan salah';

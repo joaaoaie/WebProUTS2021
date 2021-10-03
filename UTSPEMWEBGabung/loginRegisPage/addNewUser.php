@@ -10,7 +10,7 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    $foto = $_FILES['file']['name'];
+    $gambar =  time() . '_' . $_FILES['gambar']['name'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $tanggalLahir = $_POST['tanggalLahir'];
@@ -18,7 +18,7 @@
     $cek = true;
     $salt = "user";
 
-    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != "" && $foto != ""){
+    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != "" && $gambar != ""){
         if($lastName == "")
             $lastName = NULL;
 
@@ -39,19 +39,23 @@
         }
         if($cek){
             $queryInsert = $db->prepare("INSERT into user(username,email,pass,salt,foto,firstName,lastName,tanggalLahir,jenisKelamin) 
-                                         values(:username,:email,:pass,:salt,:foto,:firstName,:lastName,:tanggalLahir,:jenisKelamin)");
+                                         values(:username,:email,:pass,:salt,:gambar,:firstName,:lastName,:tanggalLahir,:jenisKelamin)");
 
             $queryInsert->bindParam(':username', $username);
             $queryInsert->bindParam(':email', $email);
             $queryInsert->bindParam(':pass', $encrypted_password_salt); //password and salt included
             $queryInsert->bindParam(':salt', $salt);
-            $queryInsert->bindParam(':foto', $foto);
+            $queryInsert->bindParam(':gambar', $gambar);
             $queryInsert->bindParam(':firstName', $firstName);
             $queryInsert->bindParam(':lastName', $lastName);
             $queryInsert->bindParam(':tanggalLahir', $tanggalLahir);
             $queryInsert->bindParam(':jenisKelamin', $jenisKelamin);
 
             $queryInsert->execute();
+
+            $target = '../image/profile/' . $gambar;
+            move_uploaded_file($_FILES['gambar']['tmp_name'], $target);
+
             header("location: $base_url/loginRegisPage/loginRegister.php"); //User diminta untuk login setelah melakukan registrasi
         }
     }

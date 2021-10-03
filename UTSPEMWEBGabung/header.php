@@ -1,8 +1,8 @@
 <?php 
   include './connect_db.php';
-
-  $queryEmailCheck = $db->prepare("SELECT * FROM user");
-  $queryEmailCheck->execute();
+  $name = $_GET['id'];
+  $queryEmailCheck = $db->prepare("SELECT * FROM user WHERE username=? ");
+  $queryEmailCheck->execute([$name]);
 
   $user = $queryEmailCheck->fetch();
 ?>
@@ -54,15 +54,30 @@
         
       <?php if(isset($_SESSION['id_user'])){ ?>
         <!-- Avatar -->
-        <a>
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-            class="rounded-circle"
-            style="height: 30px;"
-            alt=""
-            loading="lazy"
-          />
-        </a>
+        <?php if(isset($user['foto'])){?>
+          <a>
+            <img
+              src="./image/profile/<?= $user['foto']; ?>"
+              class="rounded-circle"
+              style="height: 30px;"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+        <?php } ?> 
+        <?php if(!isset($user['foto'])){?>
+          <a>
+            <img
+              src="./image/profile/placeholder.png"
+              class="rounded-circle"
+              style="height: 30px;"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+        <?php } ?> 
+
+
         <a href="<?= $base_url?>/loginRegisPage/logout.php" class="btn btn-danger" style="float: right; padding: 10px; margin-left: 10px;">Sign Out</a>
         <?php if($_SESSION['admin']){ ?> 
           <a href="<?= $base_url?>/adminView/CRUD.php" class="btn btn-success" style="float: right; padding: 10px; margin-left: 10px;">CRUD News</a>

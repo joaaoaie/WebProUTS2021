@@ -49,7 +49,7 @@
                                     <input type="date" class="form-control" name="tanggalLahir">
                                 <label style="margin-top: 3%;" for = "jenisKelamin" class="form-label">Jenis Kelamin :</label><br>
                                     <input type="text" class="form-control" name="jenisKelamin" placeholder="Male or Female">
-                                <input style="margin-top: 4%;" type="file" name="file">
+                                <input style="margin-top: 4%;" type="file" name="gambar">
 
                                 <!-- RECAPTCHA -->
                                 <!-- <div class="g-recaptcha" data-sitekey="6LeMIlEcAAAAAMD4rVJUQ8pWx5qT9FPyRSDVO5aV"
