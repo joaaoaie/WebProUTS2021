@@ -3,7 +3,7 @@
   include '../connect_db.php';
   
   $idBerita = $_GET['idBerita'];
-  $queryBerita = $db->query("SELECT * FROM berita WHERE idBerita = :idBerita");
+  $queryBerita = $db->prepare("SELECT * FROM berita WHERE idBerita = :idBerita");
   $queryBerita->bindParam(":idBerita", $idBerita);
   $queryBerita->execute();
 
@@ -17,10 +17,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/main.css">
-  <title><?= $berita['title'] ?></title>
+  <title><?= $berita['judul'] ?></title>
 </head>
 <body>
-  <h1><?= $berita['title'] ?></h1>
+  <h1><?= $berita['judul'] ?></h1>
   <div id="infoBerita">
     <table>
       <tr>
@@ -30,6 +30,8 @@
       </tr>
     </table>
   </div>
-  <?= $berita['konten'] ?>
+  <div class="container">
+    <?= $berita['konten'] ?>
+  </div>
 </body>
 </html>
