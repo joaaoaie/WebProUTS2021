@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./assets/main.css" type="text/css"/>
+    <link rel="stylesheet" href="main.css" type="text/css"/>
     <style>
       [class*="col-"] {
           width: 100%;
@@ -113,22 +113,22 @@
 
 <!-- Gambar di HOME -->
 <body class="col-12 col-m-12">
-  <div id="cf"  style="flex-direction: column;justify-content: center;align-items: center;display: flex;">
+  <div id="cf" style="flex-direction: column;justify-content: center;align-items: center;display: flex;">
     <?php if($kategori == null) { ?>
-      <img class="bottom img-fluid" src='./image/News2.jpg'/>
-      <img class="top img-fluid" src='./image/News1.jpg'/>
+      <img class="bottom" src='./image/News2.jpg'/>
+      <img class="top" src='./image/News1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Politik") { ?>
-      <img class="bottom img-fluid" src='./image/Politik2.jpg'/>
-      <img class="top img-fluid" src='./image/Politik1.jpg'/>
+      <img class="bottom" src='./image/Politik2.jpg'/>
+      <img class="top" src='./image/Politik1.jpg'/>
     <?php } ?>
     <?php if($kategori == "Sports") { ?>
-      <img class="bottom img-fluid" src='./image/Sports2.jpg'/>
-      <img class="top img-fluid" src='./image/Sports3.jpg'/>
+      <img class="bottom" src='./image/Sports2.jpg'/>
+      <img class="top" src='./image/Sports3.jpg'/>
     <?php } ?>
     <?php if($kategori == "Food") { ?>
-      <img class="bottom img-fluid" src='./image/Food2.jpg'/>
-      <img class="top img-fluid" src='./image/Food1.jpg'/>
+      <img class="bottom" src='./image/Food2.jpg'/>
+      <img class="top" src='./image/Food1.jpg'/>
     <?php } ?>
   </div>
 </body>
@@ -149,7 +149,7 @@
             if($kategori == $news['kategori']) {?>
             <div id=<?=$news['idBerita']?> class="container">
             <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
-            <a href="./berita/index.php?idBerita=<?=$news['idBerita']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+            <a style="font-size: xx-large;"><?=$news['judul']?></a><br>
             <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
             <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
           </div>
@@ -158,7 +158,7 @@
             foreach($berita as $news) { ?>
               <div id=<?=$news['idBerita']?> class="container">
                 <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
-                <a href="./berita/index.php?idBerita=<?=$news['idBerita']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+                <a href="" style="font-size: xx-large;"><?=$news['judul']?></a><br>
                 <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
                 <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
               </div>
