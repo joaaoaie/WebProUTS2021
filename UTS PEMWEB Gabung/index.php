@@ -78,7 +78,7 @@
             if($kategori == $news['kategori']) {?>
             <div id=<?=$news['idBerita']?> class="container">
             <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
-            <a style="font-size: xx-large;"><?=$news['judul']?></a><br>
+            <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
             <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
             <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
           </div>
@@ -87,7 +87,7 @@
             foreach($berita as $news) { ?>
               <div id=<?=$news['idBerita']?> class="container">
                 <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
-                <a href="" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+                <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
                 <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
                 <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
               </div>
