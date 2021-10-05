@@ -91,30 +91,6 @@ body {
       margin: auto;
     }
 
-
-/* header {
-    height: 50%;
-    background-color: lightgray;
-    
-}
-
-header>.col-3 {
-    text-align: left;
-}
-
-header>.col-3>img {
-    padding: 5px;
-    margin: 5px;
-    width: 100;
-    height: 90px;
-}
-
-header>h1 {
-    text-align: center;
-    font-weight: bold;
-    margin: 10px;
-} */
-
 .container {
     box-shadow: 4px 4px grey;
     width: 68.5%;
