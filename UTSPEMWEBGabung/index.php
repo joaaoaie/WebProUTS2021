@@ -60,13 +60,13 @@
     <a href="./index.php?kategori=Food" class="category">Food</a>
     <a href="./index.php?kategori=Sports" class="category">Sports</a>
   </div>
-<!--  code code--small code--left aos-init aos-animate -->
+
   <!-- Buat nampilin berita -->
   <div id="berita" style="margin: auto;flex-direction: column; justify-content: center; align-items: center; display: flex;">
     <?php if($kategori != null) { 
         foreach($berita as $news) { 
           if($kategori == $news['kategori']) {?>
-          <div id=<?=$news['idBerita']?> class="container" data-aos="zoom-in">
+          <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
           <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
           <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
           <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
@@ -75,7 +75,7 @@
       <?php }}
       } else { 
           foreach($berita as $news) { ?>
-            <div id=<?=$news['idBerita']?> class="container" data-aos="zoom-in">
+            <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
               <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
               <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
               <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
@@ -84,7 +84,8 @@
         <?php }
         } ?>
   </div>
-
+  
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({
