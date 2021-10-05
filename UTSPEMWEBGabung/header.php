@@ -27,7 +27,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="index.php">
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.php?id=<?= $name?>">
         <img
           src="assets/logo.png"
           alt=""
@@ -38,7 +38,7 @@
       <!-- Left links -->
       <?php if(isset($_SESSION['id_user'])) { ?>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <p style= "font-weight: bold; font-size: 30px; margin-top: 2%; margin-bottom: 0%;">Hello, <?= $user['username'] ?></p>
+            <p style= "font-weight: bold; font-size: 30px; margin-top: 2%; margin-bottom: 0%;">Hello, <?= $user['username']?></p>
         </ul>
       <?php } ?>
       <!-- Left links -->
@@ -80,7 +80,7 @@
 
         <a href="<?= $base_url?>/loginRegisPage/logout.php" class="btn btn-danger" style="float: right; padding: 10px; margin-left: 10px;">Sign Out</a>
         <?php if($_SESSION['admin']){ ?> 
-          <a href="<?= $base_url?>/adminView/CRUD.php" class="btn btn-success" style="float: right; padding: 10px; margin-left: 10px;">CRUD News</a>
+          <a href="<?= $base_url?>/adminView/CRUD.php?id=<?= $name?>" class="btn btn-success" style="float: right; padding: 10px; margin-left: 10px;">CRUD News</a>
         <?php } ?>
       <?php } ?>
       <?php if(!isset($_SESSION['id_user'])) { ?>

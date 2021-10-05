@@ -8,6 +8,6 @@
     $dbname = "webuts";
     $password = "";
 
-    $base_url = 'http://localhost/UTSPEMWEBGabung';
+    $base_url = 'http://localhost/lab/UTSPEMWEBGabung';
     $db = new PDO("mysql:host=$host;dbname=$dbname;", $username, $password);
 ?>

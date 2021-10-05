@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>User Login Page</title>
 
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="login.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     </head>
     <body>
@@ -24,19 +24,7 @@
                         $pass[$i] = $var[rand(0,strlen($var)-1)];
                     }
                 ?>
-                <style>
-                    .captchaImage{
-                        background-color: whitesmoke;
-                        color: black;
-                        user-select: none;
-                        width: 50%;
-                        margin: auto;
-                        padding: 3%;
-                        border-radius: 5px;
-                        font-family: "Brush Script MT",cursive;
-                        font-size: 25pt;
-                    }
-                </style>
+
                 <div class="captchaImage">
                     <?php
                         for($i=0;$i<8;$i++){

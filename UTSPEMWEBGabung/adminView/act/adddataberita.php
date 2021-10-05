@@ -1,5 +1,5 @@
 <?php
-  include './connect_db.php';
+  include '../../connect_db.php';
 
   $id = $_POST['id'];
   $judul = $_POST['Judul'];

@@ -10,15 +10,21 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    $gambar = $_FILES['gambar']['name'];
+    if(isset($_FILES['gambar']['name'])){
+        if($_FILES['gambar']['name'] != NULL)
+            $gambar =  time() . '_' . $_FILES['gambar']['name'];
+        else if ($_FILES['gambar']['name'] == NULL)
+            $gambar =  NULL;
+    }
+    
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $tanggalLahir = $_POST['tanggalLahir'];
     $jenisKelamin = $_POST['jenisKelamin'];
     $cek = true;
-    $salt = "admin";
+    $salt = "user";
 
-    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != "" && $gambar != ""){
+    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != "" ){
         if($lastName == "")
             $lastName = NULL;
 
@@ -60,7 +66,7 @@
         }
     }
     else{
-        $_SESSION['error_login_message'] = "Fill all the required fields";
+        $_SESSION['error_login_message'] = "Fill all required fields";
         header("location: $base_url/loginRegisPage/registrationUser.php");
     }
 ?>
