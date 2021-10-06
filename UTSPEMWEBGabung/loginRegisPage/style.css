@@ -1,0 +1,199 @@
+.warning{
+    color: red;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 18px;
+}
+
+.captchaImage{
+    background-color: whitesmoke;
+    max-width: 200px;
+    color: black;
+    user-select: none;
+    width: 40%;
+    margin: auto;
+    padding: 4%;
+    font-family: "Brush Script MT",cursive;
+    font-size: 28pt;
+    text-align: center;
+    margin-top: 3%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+::selection{
+    background: rgba(26,188,156,0.3);
+}
+
+.container{
+    max-width: 440px;
+    padding: 0 20px;
+    margin: 170px auto;
+}
+
+.wrapper{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+    height: 90px;
+    background: #30b6df;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form{
+    padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.wrapper form .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid #30b6df;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+form .row input:focus{
+    border-color: #30b6df;
+    box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+    color: #999;
+}
+
+.wrapper form .row i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background: #30b6df;
+    border: 1px solid #30b6df;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form .row i:hover{
+    color: #000;
+}
+
+.wrapper form .pass{
+    margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+    color: #30b6df;
+    font-size: 17px;
+    text-decoration: none;
+}
+.wrapper form .pass a:hover{
+    text-decoration: underline;
+}
+
+.wrapper form .button input{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #30b6df;
+    border: 1px solid #30b6df;
+    cursor: pointer;
+    margin-top: 3%;
+}
+form .button input:hover{
+    background: #0492bd;
+}
+
+.wrapper form .button2 input{
+  color: #30b6df;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #ffff;
+  border: 1px solid #30b6df;
+  cursor: pointer;
+  margin-top: 3%;
+}
+
+form .button2 input:hover{
+  color: #fff;
+  background: #0492bd;
+}
+
+.wrapper form .signup-link{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 17px;
+    margin-top: 8%;
+}
+.wrapper form .signup-link a{
+    color: #30b6df;
+    text-decoration: none;
+    margin-top: 8%;
+}
+form .signup-link a:hover{
+    color: #0492bd;
+    text-decoration: underline;
+}
+
+/*
+[class*="col-"]{
+    font-size: 24px;
+}
+ 
+@media only screen and (min-width: 600px) {
+    /*for tablets (ukuran layar lebih besar dari 600px)
+    .col-m-1 {font-size: 10px;}
+    .col-m-2 {font-size: 14px;}
+    .col-m-3 {font-size: 18px;}
+    .col-m-4 {font-size: 22px;}
+    .col-m-5 {font-size: 26px;}
+    .col-m-6 {font-size: 30px;}
+    .col-m-7 {font-size: 34px;}
+    .col-m-8 {font-size: 38px;}
+    .col-m-9 {font-size: 42px;}
+    .col-m-10 {font-size: 46px;}
+    .col-m-11 {font-size: 50px;}
+    .col-m-12 {font-size: 54px;}
+}
+
+@media only screen and (min-width: 768px) {
+    /*for desktop (ukuran layar lebih besar dari 768px)
+    .col-1 {width: 10px;}
+    .col-2 {width: 14px;}
+    .col-3 {width: 16px;}
+    .col-4 {font-size: 22px;}
+    .col-5 {width: 26px;}
+    .col-6 {width: 30px;}
+    .col-7 {width: 34px;}
+    .col-8 {width: 38px;}
+    .col-9 {width: 42px;}
+    .col-10 {width: 46px;}
+    .col-11 {width: 50px;}
+    .col-12 {width: 54px;}
+} */
