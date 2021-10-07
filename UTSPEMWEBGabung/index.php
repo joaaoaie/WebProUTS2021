@@ -66,7 +66,7 @@
     <?php if($kategori != null) { 
         foreach($berita as $news) { 
           if($kategori == $news['kategori']) {?>
-          <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
+          <div id=<?=$news['idBerita']?> class="container col-7 col-m-7" data-aos="fade-up">
           <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
           <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
           <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
@@ -75,7 +75,7 @@
       <?php }}
       } else { 
           foreach($berita as $news) { ?>
-            <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
+            <div id=<?=$news['idBerita']?> class="container col-7 col-m-7" data-aos="fade-up">
               <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
               <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
               <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
