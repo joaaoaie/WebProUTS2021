@@ -7,90 +7,99 @@
   $user = $queryCheck->fetch();
 ?>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+<html>
+  <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel="stylesheet" href="header.css" type="text/css"/>
 
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="index.php">
-        <img
-          src="assets/logo.png"
-          alt=""
-          loading="lazy"
-          style="height: 40px;"
-        />
-      </a>
-      <!-- Left links -->
-      <?php if(isset($_SESSION['id_user'])) { ?>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <p style= "font-weight: bold; font-size: 30px; margin-top: 2%; margin-bottom: 0%;">Hello, <?= $user['username'] ?></p>
-        </ul>
-      <?php } ?>
-      <!-- Left links -->
-    </div>
-    <!-- Collapsible wrapper -->
+  </head>
+  <body>
+      <header class="header">
+      <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="navbar-brand">
+              <a href="index.php?id=<?= $name?>">Web UTS</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Politics</a></li>
+                    <li><a class="dropdown-item" href="#">Food</a></li>
+                    <li><a class="dropdown-item" href="#">Sports</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">All</a></li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="./loginRegisPage/registrationUser.php">Register</a></li>
+                    <?php if(!isset($_SESSION['id_user'])) { ?>
+                      <li><a href="<?= $base_url?>/loginRegisPage/loginRegister.php" class="dropdown-item">Sign In</a></li>
+                    <?php } ?>
+                    <?php if(isset($_SESSION['id_user'])) { ?>
+                      <li><a class="dropdown-item" href="<?= $base_url?>/loginRegisPage/logout.php">Log Out</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <?php if($_SESSION['admin']){ ?> 
+                        <li><a href="<?= $base_url?>/adminView/CRUD.php?id=<?= $name?>" class="dropdown-item">CRUD News</a></li>
+                      <?php } ?>
+                    <?php } ?>
+                  </ul>
+                </li>
+                
+              </ul>
+              <ul class="navbar-nav ml-auto ">
+                  <?php if(isset($_SESSION['id_user'])){?>
+                    <?php if(isset($user['foto'])){?>
+                      <a>
+                        <img
+                          src="./image/profile/<?= $user['foto']; ?>"
+                          class="rounded-circle"
+                          style="height: 40px; width: 40px;"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </a>
+                    <?php }?>
+                    <?php if(!isset($user['foto'])){?>
+                      <a>
+                        <img
+                          src="./image/profile/placeholder.png"
+                          class="rounded-circle"
+                          style="height: 40px; width: 40px;"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </a>
+                    <?php }?>
+                  <?php }?>
+                  <?php if(!isset($_SESSION['id_user'])){?>
+                    <a style="color: #2980b9; font-size: 1.5rem;">Guest</a>
+                  <?php }?>
+                 
+              </ul>
 
-    <!-- Right elements -->
-    <div class="d-flex align-items-center">
-      <!-- Icon -->
-      <a class="text-reset me-3" href="#">
-        <i class="fas fa-shopping-cart"></i>
-      </a>  
-        
-      <?php if(isset($_SESSION['id_user'])){ ?>
-        <!-- Avatar -->
-        <?php if(isset($user['foto'])){?>
-          <a>
-            <img
-              src="./image/profile/<?= $user['foto']; ?>"
-              class="rounded-circle"
-              style="height: 40px; width: 40px;"
-              alt=""
-              loading="lazy"
-            />
-          </a>
-        <?php } ?> 
-        <?php if(!isset($user['foto'])){?>
-          <a>
-            <img
-              src="./image/profile/placeholder.png"
-              class="rounded-circle"
-              style="height: 40px; width: 40px;"
-              alt=""
-              loading="lazy"
-            />
-          </a>
-        <?php } ?> 
 
-
-        <a href="<?= $base_url?>/loginRegisPage/logout.php" class="btn btn-danger" style="float: right; padding: 10px; margin-left: 10px;">Sign Out</a>
-        <?php if($_SESSION['admin']){ ?> 
-          <a href="<?= $base_url?>/adminView/CRUD.php" class="btn btn-success" style="float: right; padding: 10px; margin-left: 10px;">CRUD News</a>
-        <?php } ?>
-      <?php } ?>
-      <?php if(!isset($_SESSION['id_user'])) { ?>
-        <a href="<?= $base_url?>/loginRegisPage/loginRegister.php" class="btn btn-primary" style="float: right; padding: 10px; margin-left: 10px;">Sign In</a>
-      <?php } ?>
-
-      
-    </div>
-    <!-- Right elements -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
+            </div>
+          </div>
+        </nav>
+      </header>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+    </body>
+</html>
