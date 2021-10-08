@@ -30,7 +30,7 @@
 <?php error_reporting(0); $kategori = $_GET['kategori']; ?>
 
 <header>
-  <div style="z-index:100;">
+  <div style="z-index:100; position:">
     <?php include './header.php';?>
   <div>
 </header>
@@ -39,7 +39,7 @@
 <body class="col-12 col-m-12">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: -1;">
     <!-- Wrapper untuk slide -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="border-radius: 15px;">
       <div class="item active">
         <img src="./image/News1.jpg" alt="Breaking News" style="width:100%;">
         <div class="carousel-caption" style="font-weight: bold;">
@@ -74,14 +74,14 @@
     </div>
 
     <!-- Tombol kiri kanan -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
-    </a>
+    </a> -->
 
   </div>
 </body>
@@ -139,4 +139,5 @@
     });
   </script>
 </body>
+
 </html>
