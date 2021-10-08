@@ -26,9 +26,9 @@
 <!-- Parameter GET buat category -->
 <?php error_reporting(0); $kategori = $_GET['kategori']; ?>
 
-<header>
+<body>
   <?php include './header.php';?>
-</header>
+</body>
 
 <!-- Gambar di HOME -->
 <body class="col-12 col-m-12">
@@ -54,11 +54,11 @@
 
 <body class="col-12 col-m-12">
   <!-- Sorting category -->
-  <div class="sorting col-12 col-m-12" style="background-color: lightgray;"> 
-    <a href="./index.php" class="category">All</a>
-    <a href="./index.php?kategori=Politik" class="category">Politics</a>
-    <a href="./index.php?kategori=Food" class="category">Food</a>
-    <a href="./index.php?kategori=Sports" class="category">Sports</a>
+  <div class="slideUp col-12 col-m-12" id="news-bar" style="background-color: lightgray;"> 
+    <a href="./index.php" class="hvr-float">All</a>
+    <a href="./index.php?kategori=Politik" class="hvr-float">Politics</a>
+    <a href="./index.php?kategori=Food" class="hvr-float">Food</a>
+    <a href="./index.php?kategori=Sports" class="hvr-float">Sports</a>
   </div>
 
   <!-- Buat nampilin berita -->
@@ -66,18 +66,18 @@
     <?php if($kategori != null) { 
         foreach($berita as $news) { 
           if($kategori == $news['kategori']) {?>
-          <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
+          <div id=<?=$news['idBerita']?> class="container col-7 col-m-7" data-aos="fade-up">
           <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
-          <a href="./detailBerita.php?judul=<?=$news['judul']?>?id=<?=$id?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+          <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
           <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
           <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
         </div>
       <?php }}
       } else { 
           foreach($berita as $news) { ?>
-            <div id=<?=$news['idBerita']?> class="container" data-aos="fade-up">
+            <div id=<?=$news['idBerita']?> class="container col-7 col-m-7" data-aos="fade-up">
               <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
-              <a href="./detailBerita.php?judul=<?=$news['judul']?>?id=<?=$id?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
+              <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large;"><?=$news['judul']?></a><br>
               <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
               <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
             </div>
@@ -109,8 +109,7 @@
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
-  });
+    });
   </script>
 </body>
 </html>
-
