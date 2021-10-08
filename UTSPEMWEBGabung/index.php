@@ -16,50 +16,77 @@
     <link rel="stylesheet" href="style.css" type="text/css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css"> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script> -->
 </head>
 
 <!-- Parameter GET buat category -->
 <?php error_reporting(0); $kategori = $_GET['kategori']; ?>
 
-<body>
-  <?php include './header.php';?>
-</body>
+<header>
+  <div style="z-index:100;">
+    <?php include './header.php';?>
+  <div>
+</header>
 
-<!-- Gambar di HOME -->
+<!-- Gambar di HOME - Carousel -->
 <body class="col-12 col-m-12">
-  <div id="cf" style="flex-direction: column;justify-content: center;align-items: center;display: flex;">
-    <?php if($kategori == null) { ?>
-      <img class="bottom" src='./image/News2.jpg'/>
-      <img class="top" src='./image/News1.jpg'/>
-    <?php } ?>
-    <?php if($kategori == "Politik") { ?>
-      <img class="bottom" src='./image/Politik2.jpg'/>
-      <img class="top" src='./image/Politik1.jpg'/>
-    <?php } ?>
-    <?php if($kategori == "Sports") { ?>
-      <img class="bottom" src='./image/Sports2.jpg'/>
-      <img class="top" src='./image/Sports3.jpg'/>
-    <?php } ?>
-    <?php if($kategori == "Food") { ?>
-      <img class="bottom" src='./image/Food2.jpg'/>
-      <img class="top" src='./image/Food1.jpg'/>
-    <?php } ?>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: -1;">
+    <!-- Wrapper untuk slide -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="./image/News1.jpg" alt="Breaking News" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>NEWS</h3>
+          <p>Your trusted News portal</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./image/Food1.jpg" alt="Food" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Food</h3>
+          <p>Delightful delicacy</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="./image/Politik2.jpg" alt="Politics" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Politics</h3>
+          <p>Know more about your country</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./image/Sports2.jpg" alt="Sports" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Sports</h3>
+          <p>Stay healthy</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol kiri kanan -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
   </div>
 </body>
 
 <body class="col-12 col-m-12">
-  <!-- Sorting category -->
-  <div class="slideUp col-12 col-m-12" id="news-bar" style="background-color: lightgray;"> 
-    <a href="./index.php" class="hvr-float">All</a>
-    <a href="./index.php?kategori=Politik" class="hvr-float">Politics</a>
-    <a href="./index.php?kategori=Food" class="hvr-float">Food</a>
-    <a href="./index.php?kategori=Sports" class="hvr-float">Sports</a>
-  </div>
 
   <!-- Buat nampilin berita -->
   <div id="berita" style="margin: auto;flex-direction: column; justify-content: center; align-items: center; display: flex;">
