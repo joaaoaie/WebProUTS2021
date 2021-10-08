@@ -2,6 +2,7 @@
 
 include '../connect_db.php';
 
+$user = $_GET['user'];
 $idBerita = $_GET['id'];
 
 $queryberita = $db->prepare("SELECT judul, kategori, gambar, penulis, tanggal, konten FROM berita WHERE idBerita=?");
@@ -42,7 +43,7 @@ $result = $queryberita->fetch();
     <div class="container">
     <div class="card">
         <div class="card-body">
-        <form method="POST" action="./act/addeditberita.php">
+        <form method="POST" action="./act/addeditberita.php?user=<?= $user; ?>">
             <div class="mb-3">
                 <label class="form-label">ID Berita</label>
                 <input type="text" class="form-control" value="<?=$idBerita?>" placeholder="idBerita" name="id" readonly>
@@ -70,11 +71,11 @@ $result = $queryberita->fetch();
             <div class="mb-3">
                 <label for="Gambar Berita">Choose a picture:</label>
 
-                <input type="file" id="gambarBerita" name="gambarBerita" accept="image/png, image/jpeg">
+                <input type="file" name="gambar" accept="image/png, image/jpeg">
             </div>
             <p></p>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="crud.php" class="btn btn-primary" >Cancel</a>
+            <a href="crud.php?id=<?= $user; ?>" class="btn btn-primary" >Cancel</a>
         </form>
         </div>
     </div>
