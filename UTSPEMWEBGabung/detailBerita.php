@@ -64,8 +64,32 @@
     </div>
     <br>
     Jumlah komentar: <?= $jumlah ?>
-    <?php foreach($comments as $comment) { ?>
-        <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> : <?=$comment['isi']?></h5>
+    <?php foreach($comments as $comment) {
+      if(isset($_SESSION['id_user'])){
+        if(isset($user['foto'])){?>
+          <a>
+            <img
+              src="./image/profile/<?= $user['foto']; ?>"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+        <?php }
+        if(!isset($user['foto'])){?>
+          <a>
+            <img
+              src="./image/profile/placeholder.png"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+        <?php }?>
+      <?php }?>
+      <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> : <?=$comment['isi']?></h5>
     <?php } ?>
   </div>
 </body>
