@@ -30,7 +30,7 @@
 <?php error_reporting(0); $kategori = $_GET['kategori']; ?>
 
 <header>
-  <div style="z-index:100; position:">
+  <div style="z-index:100;">
     <?php include './header.php';?>
   <div>
 </header>
@@ -86,7 +86,7 @@
   </div>
 </body>
 
-<body class="col-12 col-m-12">
+<body class="col-12 col-m-12" style="background: linear-gradient(to bottom right,#2980b9, lightblue); background-attachment: fixed;">
 
   <!-- Buat nampilin berita -->
   <div id="berita" style="margin: auto;flex-direction: column; justify-content: center; align-items: center; display: flex;">
