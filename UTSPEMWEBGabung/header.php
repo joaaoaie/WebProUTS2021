@@ -15,7 +15,7 @@
   </head>
   <body>
       <header class="header">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg" style="padding: 0; margin: 0;">
           <div class="container-fluid">
             <div class="navbar-brand">
               <a href="index.php?id=<?= $name?>">Web UTS</a>
