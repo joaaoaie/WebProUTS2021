@@ -79,30 +79,33 @@
     <br>
     Jumlah komentar: <?= $jumlah ?>
     <br>
-    <div style="display: inline-block">
-      <?php foreach($comments as $comment) {
-        if(isset($_SESSION['id_user'])){
-          if(isset($comment['foto'])){?>
-            <a>
+    <div>
+      <?php foreach($comments as $comment) { ?>
+        <div style="display: inline-block">
+          <?php if(isset($_SESSION['id_user'])){
+            if(isset($comment['foto'])){?>
               <img
                 src="./image/profile/<?= $comment['foto']; ?>"
                 class="rounded-circle"
                 style="height: 40px; width: 40px;"
                 loading="lazy"
               />
-            </a>
-          <?php } else { ?>
-            <a>
+            <?php } else { ?>
               <img
                 src="./image/profile/placeholder.png"
                 class="rounded-circle"
                 style="height: 40px; width: 40px;"
                 loading="lazy"
               />
-            </a>
-          <?php }
-        } ?>
-        <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> : <?=$comment['isi']?></h5>
+            <?php }
+          } ?>
+        </div>
+        <div style="display: inline-block">
+          <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> <span style="font-size:12px"><?= $comment['tanggal'] ?></span></h5>
+          <p><?=$comment['isi']?></p>
+          
+        </div>
+        <br><br>
       <?php } ?>
     </div>
   </div>
