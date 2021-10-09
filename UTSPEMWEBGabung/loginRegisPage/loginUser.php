@@ -44,7 +44,7 @@
                             <input type="hidden" class="form-control" name="captcha" value="<?=$code?>">
                             <label for="inputCaptcha" class="form-label">Captcha :</label>
                             <div class="row">
-                                <i class="fas fa-refresh"></i>
+                                <i class="fas fa-key"></i>
                                 <input type="text" class="form-control" name="kodeCaptcha" value="" maxlength="8" placeholder="Masukkan Captcha">
                             </div>
                             
