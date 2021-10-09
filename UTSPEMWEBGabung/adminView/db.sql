@@ -40,7 +40,8 @@ CREATE TABLE komentar (
 );
 
 INSERT INTO user VALUES
-  ("admin", "admin@admin.com", "3b41bf6b2d28163ee961d24d88c12bb5", "admin", NULL, "my", "admin", "2021-09-25", "male");
+  ("admin", "admin@admin.com", "3b41bf6b2d28163ee961d24d88c12bb5", "admin", NULL, "my", "admin", "2021-09-25", "Male"), /* Password : iamadmin */
+  ("test", "test@test.com", "2ed0b6915dd624f8a66a9a1d1261bd14", "user", "1633340506_28.jpg", "my", "admin", "2020-02-29", "Male"); /* Password : iamuser */
 
 INSERT INTO berita VALUES
   ("B0001", "Resep Cilok Kanji Tanpa Daging Pakai Bumbu Kacang, Empuk dan Tidak Alot", "Food", NULL, "Yuharrani Aisyah", "2021-09-25",
@@ -87,3 +88,7 @@ INSERT INTO berita VALUES
     <li>Tambahkan gula merah, gula pasir, garam, dan daun jeruk. Aduk rata. Koreksi rasa. Masak sampai bumbu meletup-letup. Tambahkan sedikit kecap. Aduk.</li>
     <li>Sajikan cilok kanji dengan bumbu kacang.</li>
   </ol>");
+
+INSERT INTO komentar VALUES
+  ('B0001', 'K0001', "admin", "2021-10-08", "test komentar admin", 6),
+  ('B0001', 'K0002', "user", "2021-10-09", "test komentar user", 9);
