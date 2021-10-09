@@ -99,7 +99,13 @@
                 $judul = substr($news['judul'], 0,40);?>
               <div class="col-xs-12 col-sm-4" data-aos="fade-up" style="z-index: 1; position: relative;">
                 <div class="card">
-                  <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
+                  <!-- Thumbnail for category -->
+                  <?php if(isset($news['gambar'])){?>
+                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
+                    <?php } else{?>
+                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                    <?php } ?>
+
                     <div class="card-content">
                       <?php if(strlen($news['judul']) > 40) {?>
                         <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul . "..."?></a></h4>
@@ -117,7 +123,13 @@
                 $judul = substr($news['judul'], 0,40);?>
               <div class="col-xs-12 col-sm-4" data-aos="fade-up" style="z-index: 1; position: relative;">
                 <div class="card">
-                  <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
+                  <!-- Thumbnail all category -->
+                  <?php if(isset($news['gambar'])){?>
+                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
+                  <?php } else{?>
+                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                  <?php } ?>
+                  
                     <div class="card-content">
                     <?php if(strlen($news['judul']) > 40) {?>
                         <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul . "..."?></a></h4>
