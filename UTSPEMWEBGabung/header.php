@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg" style="padding: 0; margin: 0;">
           <div class="container-fluid">
             <div class="navbar-brand">
-              <a href="index.php?id=<?= $name?>">Web UTS</a>
+              <a href="index.php">Web UTS</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -50,15 +50,16 @@
                     Profile
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="./loginRegisPage/registrationUser.php">Register</a></li>
+                    
                     <?php if(!isset($_SESSION['id_user'])) { ?>
                       <li><a href="<?= $base_url?>/loginRegisPage/loginRegister.php" class="dropdown-item">Sign In</a></li>
+                      <li><a class="dropdown-item" href="./loginRegisPage/registrationUser.php">Register</a></li>
                     <?php } ?>
                     <?php if(isset($_SESSION['id_user'])) { ?>
                       <li><a class="dropdown-item" href="<?= $base_url?>/loginRegisPage/logout.php">Log Out</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <?php if($_SESSION['admin']){ ?> 
-                        <li><a href="<?= $base_url?>/adminView/CRUD.php?id=<?= $name?>" class="dropdown-item">CRUD News</a></li>
+                        <li><a href="<?= $base_url?>/adminView/CRUD.php" class="dropdown-item">CRUD News</a></li>
                       <?php } ?>
                     <?php } ?>
                   </ul>
@@ -77,7 +78,8 @@
                           loading="lazy"
                         />
                       </a>
-                    <?php } else {?>
+                    <?php }?>
+                    <?php if(!isset($user['foto'])){?>
                       <a>
                         <img
                           src="./image/profile/placeholder.png"
@@ -92,7 +94,10 @@
                   <?php if(!isset($_SESSION['id_user'])){?>
                     <a style="color: #2980b9; font-size: 1.5rem;">Guest</a>
                   <?php }?>
+                 
               </ul>
+
+
             </div>
           </div>
         </nav>

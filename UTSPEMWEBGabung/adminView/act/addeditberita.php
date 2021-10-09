@@ -7,12 +7,8 @@
     $penulis = $_POST['Penulis'];
     $konten = $_POST['Konten'];
     $tanggal = $_POST['Tanggal'];
-    if($_FILES['gambar']['name'] != NULL){
-        $gambar =  time() . '_' . $_FILES['gambar']['name'];
-        $target = '../../image/news/' . $gambar;
-        move_uploaded_file($_FILES['gambar']['tmp_name'], $target);
-    }
-    $queryberita = $db->prepare('UPDATE berita SET judul=?, kategori=?, penulis=?, konten=?, tanggal=?, gambar=? WHERE idBerita=?');
-    $queryberita->execute([$judul, $kategori, $penulis, $konten, $tanggal, $gambar, $id]);
+
+    $queryberita = $db->prepare('UPDATE berita SET judul=?, kategori=?, penulis=?, konten=?, tanggal=? WHERE idBerita=?');
+    $queryberita->execute([$judul, $kategori, $penulis, $konten, $tanggal, $id]);
     header("location: $base_url/adminView/crud.php");
 ?>

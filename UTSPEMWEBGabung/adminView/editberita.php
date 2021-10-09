@@ -77,11 +77,7 @@ $result = $queryberita->fetch();
                     <label class="form-label">Tanggal Publikasi</label>
                     <input type="date" class="form-control" value="<?=$result['tanggal']?>" placeholder="Tanggal Publikasi" name="Tanggal" readonly>
                 </div>
-                <div class="mb-3">
-                    <label for="Gambar Berita">Choose a picture:</label>
-
-                    <input type="file" name="gambar" accept="image/png, image/jpeg">
-                </div>
+                
                 <p></p>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="crud.php" class="btn btn-primary" >Cancel</a>
