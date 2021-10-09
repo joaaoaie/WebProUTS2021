@@ -108,8 +108,10 @@
             <input type="hidden" name="judul" value="<?= $judul ?>">
             <input type="hidden" name="idKomentar" value="<?= $comment['idKomentar'] ?>">
             <?php if(!isset($_SESSION['id_user'])) {?>
-              <button type="submit" class="btn btn-primary"><?= $comment['suka'] ?> Like</button>
+              <button type="submit" disabled class="btn btn-primary"><?= $comment['suka'] ?> Like (Sign In to Like)</button>
             <?php } else { ?>
+              <button type="submit" class="btn btn-primary"><?= $comment['suka'] ?> Like</button>
+            <?php } ?>
           </form>
         </div>
         <br><br>
