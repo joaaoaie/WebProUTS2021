@@ -53,7 +53,14 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kategori</label>
-                    <input type="text" class="form-control" placeholder="kategori" name="Kategori" required>
+                    <select name="Kategori" class="form-select" id="kategori" required>
+                        <option selected hidden>Select Category</option>
+                        <option value="Politik">Politics</option>
+                        <option value="Food">Food</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Travel">Travel</option>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Penulis</label>
