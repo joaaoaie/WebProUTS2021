@@ -7,7 +7,16 @@
   $queryBerita->execute();
   $berita = $queryBerita->fetch();
   
-  $queryBerita2 = $db->prepare("SELECT * FROM komentar WHERE idBerita = :idBerita");
+  $queryBerita2 = $db->prepare("
+    SELECT idBerita, idKomentar, username, tanggal, isi, suka, foto
+    FROM (
+      SELECT
+        idBerita, idKomentar, username, tanggal, isi, suka,
+        (SELECT foto FROM user WHERE username = k.username) foto
+      FROM komentar k
+      WHERE idBerita = :idBerita
+    ) as a;
+  ");
   $queryBerita2->bindParam(":idBerita", $berita['idBerita']);
   $queryBerita2->execute();
   $comments = $queryBerita2->fetchAll();
@@ -69,25 +78,25 @@
     </div>
     <br>
     Jumlah komentar: <?= $jumlah ?>
-    <div>
+    <br>
+    <div style="display: inline-block">
       <?php foreach($comments as $comment) {
         if(isset($_SESSION['id_user'])){
-          if(isset($user['foto'])){?>
+          if(isset($comment['foto'])){?>
             <a>
               <img
-                src="./image/profile/<?= $user['foto']; ?>"
+                src="./image/profile/<?= $comment['foto']; ?>"
                 class="rounded-circle"
-                style="height: 40px; width: 40px; display: inline-block"
+                style="height: 40px; width: 40px;"
                 loading="lazy"
               />
             </a>
-          <?php }
-          if(!isset($user['foto'])){ ?>
+          <?php } else { ?>
             <a>
               <img
                 src="./image/profile/placeholder.png"
                 class="rounded-circle"
-                style="height: 40px; width: 40px; display: inline-block"
+                style="height: 40px; width: 40px;"
                 loading="lazy"
               />
             </a>
