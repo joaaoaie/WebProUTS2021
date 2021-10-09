@@ -36,7 +36,7 @@
                     else
                         $_SESSION['admin'] = false;
 
-                    header("location: $base_url/loginRegisPage/loginRegister.php?id=".$emailUname);
+                    header("location: $base_url/loginRegisPage/loginRegister.php");
                 }
                 else{
                     $_SESSION['error_login_message'] = 'Incorrect Password';
