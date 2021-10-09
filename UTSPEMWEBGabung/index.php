@@ -71,6 +71,22 @@
           <p>Stay healthy</p>
         </div>
       </div>
+
+      <div class="item">
+        <img src="./image/Lifestyle.jpg" alt="Lifestyle" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Lifestyle</h3>
+          <p>Style for your life</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./image/Travel.jpg" alt="Travel" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Travel</h3>
+          <p>Travel around the world</p>
+        </div>
+      </div>
     </div>
 
     <!-- Tombol kiri kanan -->
@@ -103,7 +119,7 @@
                   <?php if(isset($news['gambar'])){?>
                       <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
                     <?php } else{?>
-                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg' alt=""/>  
                     <?php } ?>
 
                     <div class="card-content">
@@ -127,7 +143,7 @@
                   <?php if(isset($news['gambar'])){?>
                     <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
                   <?php } else{?>
-                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg' alt=""/>  
                   <?php } ?>
                   
                     <div class="card-content">

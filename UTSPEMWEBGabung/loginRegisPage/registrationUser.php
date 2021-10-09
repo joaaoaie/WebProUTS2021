@@ -74,7 +74,8 @@
                                 <span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
                             </div>
 
-                            <select name="jenisKelamin" id="gender">
+                            <select name="jenisKelamin" class="form-select" id="gender">
+                                <option selected hidden>Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
