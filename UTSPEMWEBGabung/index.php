@@ -103,7 +103,7 @@
                   <?php if(isset($news['gambar'])){?>
                       <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
                     <?php } else{?>
-                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                      <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg' alt=""/>  
                     <?php } ?>
 
                     <div class="card-content">
@@ -127,7 +127,7 @@
                   <?php if(isset($news['gambar'])){?>
                     <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/news/<?= $news['gambar']?>' alt=""/>                    
                   <?php } else{?>
-                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg'/>  
+                    <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto; max-height: 200px" src='./image/News2.jpg' alt=""/>  
                   <?php } ?>
                   
                     <div class="card-content">
