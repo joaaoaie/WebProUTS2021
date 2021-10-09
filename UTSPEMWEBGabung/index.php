@@ -140,7 +140,11 @@
   <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-light text-white-50">
     <div class="container text-center">
       <h5 style="color: #2980b9;">&copy; Universitas Multimedia Nusantara </h5>
-      <h7 style="color: #2980b9;">(IF330-B) Web Programming - LEC</h7>
+      <h6 style="color: #2980b9;">(IF330-B) Web Programming - LEC</h6>
+      <small style="color: #2980b9; padding-left: 3px">Steven Geraldi (00000043822) |</small>
+      <small style="color: #2980b9; padding-left: 3px">Tesalonika Abigail (00000044503) |</small>
+      <small style="color: #2980b9; padding-left: 3px">Jonathan Octavien (00000044495) |</small>
+      <small style="color: #2980b9;">Felix Nugraha (00000043938)</small>
     </div>
   </footer>
   
