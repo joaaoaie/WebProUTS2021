@@ -24,6 +24,6 @@
   $success = $queryInsert->execute([$id, $judul, $kategori, $gambar, $penulis, $tanggal, $konten]);
 
   if ($success) {
-    header("location: $base_url/adminView/CRUD.php?id=$user");
+    header("location: $base_url/adminView/CRUD.php");
   }
 ?>

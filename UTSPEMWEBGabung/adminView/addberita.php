@@ -1,5 +1,3 @@
-<?php $user = $_GET['user']; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,28 +17,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<h4 style="color:grey"> Add Berita </h4>
+				<h4 style="color:grey"> WebUTS CRUD </h4>
 			</div>
 			<div>
-			<ul class="nav navbar-nav navbar-right">
-			<li style="list-style: none" class="nav-item active list-inline-item"><a href="#" class="btn btn-success"> Admin </a></li>
+                <ul class="nav navbar-nav navbar-right">
+                <li style="list-style: none" class="nav-item active list-inline-item"><a href="#" class="btn btn-success"> Admin </a></li>
 			</ul>
 		</div>
-		</div>
     </nav>
+    
+    <!-- Container -->
     <div class="container">
+        <!-- Header Tambah Data -->
         <div class="row my-2">
             <div class="col-md">
-                <h3 class="fw-bold text-uppercase"><i class="bi bi-person-plus-fill"></i>&nbsp;Tambah Data</h3>
+                <h3 class="fw-bold text-uppercase"><i class="bi bi-plus-square"></i>&nbsp;Tambah Data</h3>
             </div>
             <hr>
         </div>
+        <!-- Form -->
         <div class="card">
             <div class="card-body">
-            <form method="POST" action="./act/adddataberita.php?user=<?= $user; ?>" enctype="multipart/form-data">
+            <form method="POST" action="./act/adddataberita.php" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">ID Berita</label>
                     <input type="text" class="form-control" placeholder="idBerita" name="id" required>
@@ -72,7 +74,7 @@
                 </div>
                 <p></p>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="CRUD.php?id=<?=$user?>" class="btn btn-primary" >Cancel</a>
+                <a href="CRUD.php" class="btn btn-primary" >Cancel</a>
             </form>
             </div>
         </div>

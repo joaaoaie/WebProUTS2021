@@ -1,7 +1,7 @@
 <?php
-    $id = $_GET['id'];
+    
     include '../connect_db.php';
-
+    $id = $_SESSION['id_user'];
     $queryberita = $db->prepare("SELECT * from berita");
     $queryberita->execute();
     $berita = $queryberita->fetchAll();
@@ -37,7 +37,7 @@
         </div>
         <div class="row my-2">
             <div class="col-md">
-                <a href="addberita.php?user=<?=$id?>" class="btn btn-primary"><i class="bi bi-plus-square"></i>&nbsp;Tambah Data</a>
+                <a href="addberita.php" class="btn btn-primary"><i class="bi bi-plus-square"></i>&nbsp;Tambah Data</a>
             </div>
         </div>     
 
@@ -69,8 +69,8 @@
                             <td><?= $news['tanggal'] ?></td>
                             <td><?= $news['gambar'] ?></td>
                             <td>
-                                <a href="editberita.php?id=<?= $news['idBerita']; ?>&user=<?= $id;?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Edit</a> |
-                                <a href="deleteberita.php?id=<?= $news['idBerita']; ?>&user=<?= $id;?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus berita dengan judul <?= $news['judul']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Delete</a>
+                                <a href="editberita.php?id=<?= $news['idBerita']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Edit</a> |
+                                <a href="deleteberita.php?id=<?= $news['idBerita']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus berita dengan judul <?= $news['judul']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Delete</a>
                             </td>
                         </tr>
                         <?php } ?>

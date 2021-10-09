@@ -1,7 +1,7 @@
 <?php 
   include '../connect_db.php';
 
-  $name = $_GET['id'];
+  $name = $_SESSION['id_user'];
   $queryCheck = $db->prepare("SELECT * FROM user WHERE (email=? OR username=?)");
   $queryCheck->execute([$name, $name]);
   $user = $queryCheck->fetch();
@@ -15,7 +15,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="../index.php?id=<?= $user['username']?>">
+      <a class="navbar-brand mt-2 mt-lg-0" href="../index.php">
         <img
           src="./assets/logo.png"
           height="35"
