@@ -1,10 +1,12 @@
 <?php 
   include './connect_db.php';
 
-  $name = $_GET['id'];
-  $queryCheck = $db->prepare("SELECT * FROM user WHERE (email=? OR username=?)");
-  $queryCheck->execute([$name, $name]);
-  $user = $queryCheck->fetch();
+  if(!isset($_SESSION)) {
+    $name = $_SESSION['id_user'];
+    $queryCheck = $db->prepare("SELECT * FROM user WHERE (email=? OR username=?)");
+    $queryCheck->execute([$name, $name]);
+    $user = $queryCheck->fetch();
+  }
 ?>
 
 <html>
