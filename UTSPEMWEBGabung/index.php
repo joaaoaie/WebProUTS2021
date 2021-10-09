@@ -71,6 +71,22 @@
           <p>Stay healthy</p>
         </div>
       </div>
+
+      <div class="item">
+        <img src="./image/Lifestyle.jpg" alt="Lifestyle" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Lifestyle</h3>
+          <p>Style for your life</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./image/Travel.jpg" alt="Travel" style="width:100%;">
+        <div class="carousel-caption" style="font-weight: bold;">
+          <h3>Travel</h3>
+          <p>Travel around the world</p>
+        </div>
+      </div>
     </div>
 
     <!-- Tombol kiri kanan -->
