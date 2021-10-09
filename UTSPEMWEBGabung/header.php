@@ -77,8 +77,7 @@
                           loading="lazy"
                         />
                       </a>
-                    <?php }?>
-                    <?php if(!isset($user['foto'])){?>
+                    <?php } else {?>
                       <a>
                         <img
                           src="./image/profile/placeholder.png"
