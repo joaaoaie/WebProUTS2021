@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
@@ -106,9 +107,9 @@
             <input type="hidden" name="judul" value="<?= $judul ?>">
             <input type="hidden" name="idKomentar" value="<?= $comment['idKomentar'] ?>">
             <?php if(!isset($_SESSION['id_user'])) {?>
-              <button type="submit" disabled class="btn btn-primary"><?= $comment['suka'] ?> Like (Sign In to Like)</button>
+              <button type="submit" disabled class="btn btn-block buttons"><i class="far fa-thumbs-up"></i> <?= $comment['suka'] ?> (Sign In to Like)</button>
             <?php } else { ?>
-              <button type="submit" class="btn btn-primary"><?= $comment['suka'] ?> Like</button>
+              <button type="submit" class="btn btn-block buttons"><i class="far fa-thumbs-up"></i> <?= $comment['suka'] ?></button>
             <?php } ?>
           </form>
         </div>
