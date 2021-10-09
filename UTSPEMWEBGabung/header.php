@@ -37,7 +37,7 @@
                     Categories
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="./index.php?kategori=Politik">Politics</a></li>
+                    <li><a class="dropdown-item" href="./index.php?kategori=Politik">Politics</a></li>
                     <li><a class="dropdown-item" href="./index.php?kategori=Food">Food</a></li>
                     <li><a class="dropdown-item" href="./index.php?kategori=Sports">Sports</a></li>
                     <li><a class="dropdown-item" href="./index.php?kategori=Lifestyle">Lifestyle</a></li>
