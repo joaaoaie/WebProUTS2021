@@ -14,5 +14,5 @@
     }
     $queryberita = $db->prepare('UPDATE berita SET judul=?, kategori=?, penulis=?, konten=?, tanggal=?, gambar=? WHERE idBerita=?');
     $queryberita->execute([$judul, $kategori, $penulis, $konten, $tanggal, $gambar, $id]);
-    header("location: $base_url/adminView/crud.php?id=$user");
+    header("location: $base_url/adminView/crud.php");
 ?>
