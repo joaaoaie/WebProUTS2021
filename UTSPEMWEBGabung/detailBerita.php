@@ -49,18 +49,18 @@
     <div>
   </header>
 
-  <h1><?= $berita['judul'] ?></h1>
-  <div id="infoBerita">
+  <h1 style="width: 80%; margin: auto; text-align: center"><?= $berita['judul'] ?></h1>
+  <div id="infoBerita" style="width: 60%; margin: auto; margin-top: 2%">
     <table>
       <tr><td>Penulis: <?= $berita['penulis'] ?></td></tr>
       <tr><td>Tanggal publikasi: <?= $berita['tanggal'] ?></td></tr>
       <tr><td>Kategori: <?= $berita['kategori'] ?></td></tr>
     </table>
   </div>
-  <div class="card container" style="width: 60%">
+  <div class="card container" style="width: 60%; margin-top: 1%">
     <?= $berita['konten'] ?>
   </div>
-  <div class="container">
+  <div class="container" style="width: 90%">
     <h3>Komentar</h3>
     <div>
       <form id="kirimKomentar" class="form-horizontal" method="POST" action="act/tambahKomentar.php">
@@ -82,23 +82,21 @@
     <div>
       <?php foreach($comments as $comment) { ?>
         <div style="display: inline-block">
-          <?php if(isset($_SESSION['id_user'])){
-            if(isset($comment['foto'])){?>
-              <img
-                src="./image/profile/<?= $comment['foto']; ?>"
-                class="rounded-circle"
-                style="height: 40px; width: 40px;"
-                loading="lazy"
-              />
-            <?php } else { ?>
-              <img
-                src="./image/profile/placeholder.png"
-                class="rounded-circle"
-                style="height: 40px; width: 40px;"
-                loading="lazy"
-              />
-            <?php }
-          } ?>
+          <?php if(isset($comment['foto'])){?>
+            <img
+              src="./image/profile/<?= $comment['foto']; ?>"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              loading="lazy"
+            />
+          <?php } else { ?>
+            <img
+              src="./image/profile/placeholder.png"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              loading="lazy"
+            />
+          <?php } ?>
         </div>
         <div style="display: inline-block">
           <form method="POST" action="act/tambahLike.php">
