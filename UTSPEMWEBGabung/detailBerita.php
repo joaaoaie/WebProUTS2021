@@ -49,15 +49,15 @@
     <div>
   </header>
 
-  <h1><?= $berita['judul'] ?></h1>
-  <div id="infoBerita">
+  <h1 style="width: 80%; margin: auto; text-align: center"><?= $berita['judul'] ?></h1>
+  <div id="infoBerita" style="width: 60%; margin: auto; margin-top: 2%">
     <table>
       <tr><td>Penulis: <?= $berita['penulis'] ?></td></tr>
       <tr><td>Tanggal publikasi: <?= $berita['tanggal'] ?></td></tr>
       <tr><td>Kategori: <?= $berita['kategori'] ?></td></tr>
     </table>
   </div>
-  <div class="card container" style="width: 60%">
+  <div class="card container" style="width: 60%; margin-top: 1%">
     <?= $berita['konten'] ?>
   </div>
   <div class="container">
