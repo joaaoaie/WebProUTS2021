@@ -87,30 +87,55 @@
 </body>
 
 <body class="col-12 col-m-12" style="background: linear-gradient(to bottom right,#2980b9, lightblue); background-attachment: fixed;">
-
-  <!-- Buat nampilin berita -->
-  <div id="berita" style="margin: auto;flex-direction: column; justify-content: center; align-items: center; display: flex;">
-    <?php if($kategori != null) { 
-        foreach($berita as $news) { 
-          if($kategori == $news['kategori']) {?>
-          <div id=<?=$news['idBerita']?> class="container col-6 col-m-6" data-aos="fade-up">
-          <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
-          <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large; text-decoration: none; color: black; font-weight: 550;"><?=$news['judul']?></a><br>
-          <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
-          <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
+  <!-- Portal Berita -->
+  <section class="wrapper">
+    <div class="container-fostrap">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <?php if($kategori != null) { 
+            foreach($berita as $news) { 
+              if($kategori == $news['kategori']) {
+                $judul = substr($news['judul'], 0,40);?>
+              <div class="col-xs-12 col-sm-4" data-aos="fade-up">
+                <div class="card">
+                  <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
+                    <div class="card-content">
+                      <?php if(strlen($news['judul']) > 40) {?>
+                        <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul . "..."?></a></h4>
+                      <?php } else {?>
+                        <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul?></a></h4>
+                      <?php } ?>
+                      <p style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></p>
+                      <p style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></p>
+                    </div>
+                </div>
+              </div>
+          <?php }}
+          } else { 
+              foreach($berita as $news) { 
+                $judul = substr($news['judul'], 0,40);?>
+              <div class="col-xs-12 col-sm-4" data-aos="fade-up">
+                <div class="card">
+                  <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
+                    <div class="card-content">
+                    <?php if(strlen($news['judul']) > 40) {?>
+                        <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul . "..."?></a></h4>
+                      <?php } else {?>
+                        <h4 class="card-title"><a href="./detailBerita.php?judul=<?=$news['judul']?>"><?=$judul?></a></h4>
+                      <?php } ?>
+                      <p style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></p>
+                      <p style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></p>
+                    </div>
+                </div>
+              </div>
+            <?php }
+            } ?>
+          </div>
         </div>
-      <?php }}
-      } else { 
-          foreach($berita as $news) { ?>
-            <div id=<?=$news['idBerita']?> class="container col-6 col-m-6" data-aos="fade-up">
-              <img style="width: 100%; margin-top: 10px; margin-right: auto; height: auto;" src='./image/News2.jpg'/>
-              <a href="./detailBerita.php?judul=<?=$news['judul']?>" style="font-size: xx-large; text-decoration: none; color: black; font-weight: 550;"><?=$news['judul']?></a><br>
-              <h4 style="display: inline-block; padding-right: 30px;">Kategori : <b><?=$news['kategori']?></b></h4>
-              <h4 style="display: inline-block;">Tanggal : <b><?=$news['tanggal']?></b></h4>
-            </div>
-        <?php }
-        } ?>
-  </div>
+      </div>
+    </div>
+  </section>
   
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
