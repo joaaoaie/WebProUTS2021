@@ -57,11 +57,11 @@
       <tr><td>Kategori: <?= $berita['kategori'] ?></td></tr>
     </table>
   </div>
-  <div class="container">
+  <div class="card container" style="width: 60%">
     <?= $berita['konten'] ?>
   </div>
   <div class="container">
-    <h1>Komentar</h1>
+    <h3>Komentar</h3>
     <div>
       <form id="kirimKomentar" class="form-horizontal" method="POST" action="act/tambahKomentar.php">
         <?php if(!isset($_SESSION['id_user'])) {?>
