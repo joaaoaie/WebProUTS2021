@@ -101,9 +101,16 @@
           } ?>
         </div>
         <div style="display: inline-block">
-          <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> <span style="font-size:12px"><?= $comment['tanggal'] ?></span></h5>
-          <p><?=$comment['isi']?></p>
-          
+          <form method="POST" action="act/tambahLike.php">
+            <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> <span style="font-size:12px"><?= $comment['tanggal'] ?></span></h5>
+            <p><?=$comment['isi']?></p>
+            <input type="hidden" name="idBerita" value="<?= $comment['idBerita'] ?>">
+            <input type="hidden" name="judul" value="<?= $judul ?>">
+            <input type="hidden" name="idKomentar" value="<?= $comment['idKomentar'] ?>">
+            <?php if(!isset($_SESSION['id_user'])) {?>
+              <button type="submit" class="btn btn-primary"><?= $comment['suka'] ?> Like</button>
+            <?php } else { ?>
+          </form>
         </div>
         <br><br>
       <?php } ?>
