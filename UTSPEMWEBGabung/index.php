@@ -37,7 +37,7 @@
 
 <!-- Gambar di HOME - Carousel -->
 <body class="col-12 col-m-12">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: -1; margin-top: 75px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: 1; margin-top: 75px;">
     <!-- Wrapper untuk slide -->
     <div class="carousel-inner" style="border-radius: 15px;">
       <div class="item active">
@@ -74,14 +74,14 @@
     </div>
 
     <!-- Tombol kiri kanan -->
-    <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
-    </a> -->
+    </a>
 
   </div>
 </body>
