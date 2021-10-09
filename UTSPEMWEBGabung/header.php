@@ -1,7 +1,7 @@
 <?php 
   include './connect_db.php';
 
-  if(!isset($_SESSION)) {
+  if(isset($_SESSION['id_user'])) {
     $name = $_SESSION['id_user'];
     $queryCheck = $db->prepare("SELECT * FROM user WHERE (email=? OR username=?)");
     $queryCheck->execute([$name, $name]);
