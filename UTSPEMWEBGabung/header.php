@@ -40,6 +40,8 @@
                   <li><a class="dropdown-item" href="./index.php?kategori=Politik">Politics</a></li>
                     <li><a class="dropdown-item" href="./index.php?kategori=Food">Food</a></li>
                     <li><a class="dropdown-item" href="./index.php?kategori=Sports">Sports</a></li>
+                    <li><a class="dropdown-item" href="./index.php?kategori=Lifestyle">Lifestyle</a></li>
+                    <li><a class="dropdown-item" href="./index.php?kategori=Travel">Travel</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="./index.php">All</a></li>
                   </ul>
@@ -96,6 +98,8 @@
                   <?php }?>
                  
               </ul>
+
+
             </div>
           </div>
         </nav>
