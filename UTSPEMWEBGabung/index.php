@@ -30,14 +30,14 @@
 <?php error_reporting(0); $kategori = $_GET['kategori']; ?>
 
 <header>
-  <div style="z-index:100;">
+  <div style="z-index:100; position: absolute; width:100%;">
     <?php include './header.php';?>
   <div>
 </header>
 
 <!-- Gambar di HOME - Carousel -->
 <body class="col-12 col-m-12">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: -1;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index: -1; margin-top: 75px;">
     <!-- Wrapper untuk slide -->
     <div class="carousel-inner" style="border-radius: 15px;">
       <div class="item active">
@@ -97,7 +97,7 @@
             foreach($berita as $news) { 
               if($kategori == $news['kategori']) {
                 $judul = substr($news['judul'], 0,40);?>
-              <div class="col-xs-12 col-sm-4" data-aos="fade-up">
+              <div class="col-xs-12 col-sm-4" data-aos="fade-up" style="z-index: 1; position: relative;">
                 <div class="card">
                   <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
                     <div class="card-content">
@@ -115,7 +115,7 @@
           } else { 
               foreach($berita as $news) { 
                 $judul = substr($news['judul'], 0,40);?>
-              <div class="col-xs-12 col-sm-4" data-aos="fade-up">
+              <div class="col-xs-12 col-sm-4" data-aos="fade-up" style="z-index: 1; position: relative;">
                 <div class="card">
                   <img style="width: 100%; margin-top: 10px; margin-right: auto;height: auto;" src='./image/News2.jpg'/>
                     <div class="card-content">
