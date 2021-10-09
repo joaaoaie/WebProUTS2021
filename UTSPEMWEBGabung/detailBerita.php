@@ -1,13 +1,21 @@
 <?php
-  // include './fetchBerita.php'
   include './connect_db.php';
   
   $judul = $_GET['judul'];
   $queryBerita = $db->prepare("SELECT * FROM berita WHERE judul = :judul");
   $queryBerita->bindParam(":judul", $judul);
   $queryBerita->execute();
-
   $berita = $queryBerita->fetch();
+  
+  $queryBerita2 = $db->prepare("SELECT * FROM komentar WHERE idBerita = :idBerita");
+  $queryBerita2->bindParam(":idBerita", $berita['idBerita']);
+  $queryBerita2->execute();
+  $comments = $queryBerita2->fetchAll();
+
+  $jumlah = 0;
+  foreach ($comments as $comment) {$jumlah++;}
+  $idCBaru = $jumlah+1;
+  $idCBaru = sprintf("K%04d", $idCBaru);
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +50,23 @@
     <h1>Komentar</h1>
     <div>
       <form id="kirimKomentar" class="form-horizontal" method="POST" action="act/tambahKomentar.php">
-        <textarea id="isi" rows="4" cols="50"></textarea><br>
-        <button type="submit" class="btn btn-primary" style="margin-bottom: 1%;">Kirim</button>
+        <?php if(!isset($_SESSION['id_user'])) {?>
+          <textarea disabled name="isi" rows="4" cols="50" placeholder="Please Sign In First"></textarea><br>
+        <?php } else { ?>
+          <textarea name="isi" rows="4" cols="50"></textarea><br>
+          <input type="hidden" name="Username" value="<?= $_SESSION['id_user'] ?>">
+          <input type="hidden" name="judul" value="<?= $judul ?>">
+          <input type="hidden" name="idBerita" value="<?= $berita['idBerita'] ?>">
+          <input type="hidden" name="idKomentar" value="<?= $idCBaru ?>">
+          <button type="submit" class="btn btn-primary" style="margin-bottom: 1%;">Kirim</button>
+        <?php } ?>
       </form>
     </div>
+    <br>
+    Jumlah komentar: <?= $jumlah ?>
+    <?php foreach($comments as $comment) { ?>
+        <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> : <?=$comment['isi']?></h5>
+    <?php } ?>
   </div>
 </body>
 </html>
