@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@200&display=swap');
+
+.ml-auto{
+    margin-left: auto;
+}
+
+
+
+html, body{
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: rgba(34,54,69,.7);
+    font-weight: 500;
+    
+}
+
+.nav-item a:hover {
+    color: #2980b9;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.navbar{
+    background: white;
+    padding: 3rem 2rem;
+    height: 0rem;
+    min-height: 12vh;
+}
+
+.navbar .navbar-brand a{
+    padding: 1rem 0;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar-brand a{
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #2980b9;
+}
+
+.navbar-toggler{
+    background: #2980b9;
+    border: none;
+    padding: 10px 6px;
+    outline: none;
+}
+
+.navbar-toggler span{
+    display: block;
+    width: 22px;
+    height: 2px;
+    border: 1px;
+    background: #fff;
+}
+
+.navbar-toggler span + span{
+    margin-top: 4px;
+    width: 18px;
+    margin-left: 4px;
+}
+
+.navbar-toggler span + span + span{
+    width: 10px;
+    margin-left: 10px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 2rem 1.2rem;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+    border-top: 4px solid #2980b9;
+}
+.navbar-expand-lg .navbar-nav .nav-link:active{
+    border-top: 4px solid #2980b9;
+    color: #2980b9;
+}
+
+.navbar-nav button{
+    padding: 1.2rem 0;
+}
+
+.navbar-nav .btn{
+    background-color: #2980b9;
+    color: white;
+    border-radius: 0;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    margin-top: -10px;
+}
+
+.navbar-nav .btn:hover{
+    background-color: #0a3d62;
+}
