@@ -65,6 +65,6 @@
     }
     else{
         $_SESSION['error_login_message'] = "Fill all the required fields";
-        header("location: $base_url/loginRegisPage/registrationUser.php");
+        header("location: $base_url/loginRegisPage/signInUp.php#form-login-submit");
     }
 ?>
