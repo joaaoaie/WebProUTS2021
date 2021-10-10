@@ -52,12 +52,12 @@
 </head>
 <body style="background: linear-gradient(to bottom,white, lightblue); background-attachment: fixed;">
   <header>
-    <div style="z-index:100; position: absolute; width:100%;">
+    <div style="z-index:100;">
       <?php include './header.php';?>
     <div>
   </header>
 
-  <h1 style="width: 80%; margin: auto; text-align: center; margin-top: 90px;"><?= $berita['judul'] ?></h1>
+  <h1 style="width: 80%; margin: auto; text-align: center;"><?= $berita['judul'] ?></h1>
   <div id="infoBerita" style="width: 60%; margin: auto; margin-top: 2%">
     <table>
       <tr><td>Penulis: <?= $berita['penulis'] ?></td></tr>
@@ -65,7 +65,7 @@
       <tr><td>Kategori: <?= $berita['kategori'] ?></td></tr>
     </table>
   </div>
-  <div class="card container" style="width: 60%; margin-top: 1%">
+  <div class="card container" style="width: 60%; margin-top: 1%; z-index: -1;">
     <?= $berita['konten'] ?>
   </div>
   <div class="container" style="width: 90%">
