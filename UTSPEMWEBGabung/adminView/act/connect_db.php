@@ -5,7 +5,7 @@
 
     $host = "localhost";
     $username = "root";
-    $dbname = "webuts";
+    $dbname = "id17737508_web_uts";
     $password = "";
 
     $base_url = 'http://localhost/UTSPEMWEBGabung';
