@@ -1,5 +1,12 @@
 <?php
   include './connect_db.php';
+
+  if(isset($_SESSION['id_user'])) {
+    $name = $_SESSION['id_user'];
+    $queryCheck = $db->prepare("SELECT * FROM user WHERE (email=? OR username=?)");
+    $queryCheck->execute([$name, $name]);
+    $user = $queryCheck->fetch();
+  }
   
   $judul = $_GET['judul'];
   $queryBerita = $db->prepare("SELECT * FROM berita WHERE judul = :judul");
@@ -69,7 +76,7 @@
           <textarea disabled name="isi" rows="4" cols="50" placeholder="Please Sign In First"></textarea><br>
         <?php } else { ?>
           <textarea name="isi" rows="4" cols="50"></textarea><br>
-          <input type="hidden" name="Username" value="<?= $_SESSION['id_user'] ?>">
+          <input type="hidden" name="Username" value="<?= $user['username'] ?>">
           <input type="hidden" name="judul" value="<?= $judul ?>">
           <input type="hidden" name="idBerita" value="<?= $berita['idBerita'] ?>">
           <input type="hidden" name="idKomentar" value="<?= $idCBaru ?>">
@@ -81,37 +88,37 @@
     <div>
       <?php foreach($comments as $comment) { ?>
         <div>
-          <form method="POST" action="act/tambahLike.php">
-            <div style="display: inline-block; vertical-align: top; margin-right: 10px;">
-              <?php if(isset($comment['foto'])){?>
-                <img
-                  src="./image/profile/<?= $comment['foto']; ?>"
-                  class="rounded-circle"
-                  style="height: 40px; width: 40px;"
-                  loading="lazy"
-                />
-              <?php } else { ?>
-                <img
-                  src="./image/profile/placeholder.png"
-                  class="rounded-circle"
-                  style="height: 40px; width: 40px;"
-                  loading="lazy"
-                />
+          <div style="display: inline-block; vertical-align: top; margin-right: 10px;">
+            <?php if(isset($comment['foto'])){?>
+              <img
+              src="./image/profile/<?= $comment['foto']; ?>"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              loading="lazy"
+              />
+            <?php } else { ?>
+              <img
+              src="./image/profile/placeholder.png"
+              class="rounded-circle"
+              style="height: 40px; width: 40px;"
+              loading="lazy"
+              />
               <?php } ?>
             </div>
             <div style="display: inline-block;">
-              <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> <span style="font-size:12px"><?= $comment['tanggal'] ?></span></h5>
-              <p style="margin: 0;"><?=$comment['isi']?></p>
-              <input type="hidden" name="idBerita" value="<?= $comment['idBerita'] ?>">
-              <input type="hidden" name="judul" value="<?= $judul ?>">
-              <input type="hidden" name="idKomentar" value="<?= $comment['idKomentar'] ?>">
-              <?php if(!isset($_SESSION['id_user'])) {?>
-                <button type="submit" disabled class="btn btn-block buttons"><i class="far fa-thumbs-up"></i> <?= $comment['suka'] ?> (Sign In to Like)</button>
-              <?php } else { ?>
+              <form method="POST" action="act/tambahLike.php">
+                <h5 id=<?=$comment['idKomentar']?> ><?= $comment['username'] ?> <span style="font-size:12px"><?= $comment['tanggal'] ?></span></h5>
+                <p style="margin: 0;"><?=$comment['isi']?></p>
+                <input type="hidden" name="idBerita" value="<?= $comment['idBerita'] ?>">
+                <input type="hidden" name="judul" value="<?= $judul ?>">
+                <input type="hidden" name="idKomentar" value="<?= $comment['idKomentar'] ?>">
+                <?php if(!isset($_SESSION['id_user'])) {?>
+                  <button type="submit" disabled class="btn btn-block buttons"><i class="far fa-thumbs-up"></i> <?= $comment['suka'] ?> (Sign In to Like)</button>
+                <?php } else { ?>
                 <button type="submit" class="btn btn-block buttons"><i class="far fa-thumbs-up"></i> <?= $comment['suka'] ?></button>
-              <?php } ?>
+                <?php } ?>
+              </form>
             </div>
-          </form>
           <br>
         </div>
       <?php } ?>
