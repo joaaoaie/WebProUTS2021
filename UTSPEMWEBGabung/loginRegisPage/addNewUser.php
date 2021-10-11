@@ -37,7 +37,7 @@
                     $_SESSION['error_login_message'] = "Email already used";
 
                 $cek = false;
-                header("location: $base_url/loginRegisPage/registrationUser.php");
+                header("location: $base_url/loginRegisPage/signInUp.php");
                 break;
             }
         }
@@ -60,11 +60,11 @@
             $target = '../image/profile/' . $gambar;
             move_uploaded_file($_FILES['gambar']['tmp_name'], $target);
 
-            header("location: $base_url/loginRegisPage/loginRegister.php"); //User diminta untuk login setelah melakukan registrasi
+            header("location: $base_url/loginRegisPage/signInUp.php"); //User diminta untuk login setelah melakukan registrasi
         }
     }
     else{
         $_SESSION['error_login_message'] = "Fill all the required fields";
-        header("location: $base_url/loginRegisPage/signInUp.php#form-login-submit");
+        header("location: $base_url/loginRegisPage/signInUp.php");
     }
 ?>
