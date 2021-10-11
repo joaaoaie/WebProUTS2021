@@ -50,8 +50,6 @@
                   <?php }?>
                   <a href="<?= $base_url?>/loginRegisPage/logout.php" class="btn" style="float: right; padding: 10px; margin-left: 10px; background:red;" >Sign Out</a>
               </ul>
-
-
             </div>
           </div>
         </nav>
