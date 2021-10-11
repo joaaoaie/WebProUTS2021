@@ -72,7 +72,7 @@
     <img style="width: 80%; margin-top: 10px; display: block; height: auto;" src='./image/News2.jpg'/>  
   <?php } ?>
 
-  <div class="card container" style="width: 60%; margin-top: 1%; z-index: -1;">
+  <div class="card container" style="width: 80%; margin-top: 1%; z-index: -1;">
     <?= $berita['konten'] ?>
   </div>
 
