@@ -95,10 +95,7 @@
                   <?php if(!isset($_SESSION['id_user'])){?>
                     <a style="color: #2980b9; font-size: 1.5rem;">Guest</a>
                   <?php }?>
-                 
               </ul>
-
-
             </div>
           </div>
         </nav>
