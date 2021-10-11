@@ -15,8 +15,6 @@
   else if ($_FILES['gambar']['name'] == NULL)
       $gambar =  NULL;
   
-
-
   $queryInsert = $db->prepare("INSERT INTO berita(idBerita,judul,kategori,gambar, penulis,tanggal,konten)
               VALUES (?,?,?,?,?,?,?)");
 
