@@ -66,6 +66,38 @@ form.sign-in-form {
   margin-bottom: 10px;
 }
 
+.form-select{
+  text-decoration: none;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+
+}
+
+input[type="file"] {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.warning{
+  color: red;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3%;
+  font-size: 18px;
+}
+
 .input-field {
   max-width: 380px;
   width: 100%;
@@ -102,56 +134,35 @@ form.sign-in-form {
   font-weight: 500;
 }
 
-.form-select{
-    text-decoration: none;
-    background: none;
-    outline: none;
-    border: none;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
-
+.social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
 }
 
-input[type="file"] {
-    text-decoration: none;
+.social-media {
+  display: flex;
+  justify-content: center;
 }
 
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+.social-icon {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.45rem;
+  color: #333;
+  border-radius: 50%;
+  border: 1px solid #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
 
-.warning{
-    color: red;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 3%;
-    font-size: 18px;
+.social-icon:hover {
+  color: #4481eb;
+  border-color: #4481eb;
 }
-
-@media only screen and (min-width: 768px){
-    .captchaText{
-        user-select: none;
-        font-family: Copperplate, Papyrus, fantasy;
-        font-size: 35px;
-        text-align: center;
-        width: 55%;
-    }
-}
-  
-@media only screen and (max-width: 768px){
-    .captchaText{
-        user-select: none;
-        font-family: Copperplate, Papyrus, fantasy;
-        font-size: 40px;
-        text-align: center;
-    }
-}
-
 
 .btn {
   width: 150px;
@@ -301,8 +312,6 @@ input[type="file"] {
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
-    overflow-y: scroll;
-    height: auto;
   }
 
   .signin-signup,
@@ -359,19 +368,19 @@ input[type="file"] {
   }
 
   .container:before {
-    width: 500px;
-    height: 500px;
+    width: 1500px;
+    height: 1500px;
     transform: translateX(-50%);
     left: 30%;
-    bottom: 80%;
+    bottom: 68%;
     right: initial;
     top: initial;
     transition: 2s ease-in-out;
   }
 
   .container.sign-up-mode:before {
-    transform: translate(-65%, 100%);
-    bottom: 15%;
+    transform: translate(-50%, 100%);
+    bottom: 32%;
     right: initial;
   }
 
@@ -382,8 +391,7 @@ input[type="file"] {
 
   .container.sign-up-mode .right-panel .image,
   .container.sign-up-mode .right-panel .content {
-    transform: translate(-30px, 45px);
-
+    transform: translateY(0px);
   }
 
   .right-panel .image,
@@ -410,28 +418,16 @@ input[type="file"] {
   }
   .container {
     padding: 1.5rem;
-    max-height: 20%;
   }
 
   .container:before {
-    bottom: 80%;
+    bottom: 72%;
     left: 50%;
   }
 
-  .signUp:before{
-    left: 100%;
-  }
-
   .container.sign-up-mode:before {
-    bottom: -5%;
-    left: 70%;
+    bottom: 28%;
+    left: 50%;
   }
-  .container.sign-up-mode .right-panel .image,
-  .container.sign-up-mode .right-panel .content{
-    transform: translate(140px, 70px);
-    line-height: 2px;
-    background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
-    border-radius: 49px;
-
-  }
+  #form-login-submit{height:500px;overflow-y:auto; display:grid;}
 }

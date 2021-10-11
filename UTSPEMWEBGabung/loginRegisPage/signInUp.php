@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="login.css" />
     <title>Sign in & Sign up Form</title>
   </head>
-  
-  
   <body>
     <div class="container">
       <div class="forms-container">
@@ -94,7 +92,7 @@
                 <label style="margin-bottom: 0%;" for="profilePicture" class="custom-file-upload">Upload Profile Picture</label><br>
                 <input style="margin-top: 4%;" type="file" name="gambar" accept="image/png, image/jpeg">
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" class="btn signUp" value="Sign up" />
           </form>
         </div>
       </div>
