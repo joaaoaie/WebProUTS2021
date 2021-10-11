@@ -13,7 +13,7 @@
     if($_FILES['gambar']['name'] != NULL)
         $gambar =  time() . '_' . $_FILES['gambar']['name'];
     else
-        $gambar = "";
+        $gambar = NULL;
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -22,7 +22,7 @@
     $cek = true;
     $salt = "user";
 
-    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != "" && $jenisKelamin != "" && $gambar != ""){
+    if($username != "" && $email != "" && $pass != "" && $firstName != "" && $tanggalLahir != ""){
         if($lastName == "")
             $lastName = NULL;
 
