@@ -2,8 +2,6 @@
   box-sizing: border-box;
 }
 
-
-
 .float-left{
     float: left;
 }
@@ -114,9 +112,3 @@ body {
   overflow:auto;
   height: 768px;
 }
-
-
-
-
-
-  
