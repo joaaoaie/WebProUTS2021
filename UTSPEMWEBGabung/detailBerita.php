@@ -67,9 +67,9 @@
   </div>
 
   <?php if(isset($berita['gambar'])){?>
-    <img style="width: 80%; margin-top: 10px; margin-right: auto; display: block; height: auto;" src='./image/news/<?= $berita['gambar']?>'/>          
+    <img style="width: 80%; margin-top: 10px; display: block; height: auto;" src='./image/news/<?= $berita['gambar']?>'/>          
   <?php } else {?>
-    <img style="width: 80%; margin-top: 10px; margin-right: auto; display: block; height: auto;" src='./image/News2.jpg'/>  
+    <img style="width: 80%; margin-top: 10px; display: block; height: auto;" src='./image/News2.jpg'/>  
   <?php } ?>
 
   <div class="card container" style="width: 60%; margin-top: 1%; z-index: -1;">
