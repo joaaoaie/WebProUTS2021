@@ -65,9 +65,17 @@
       <tr><td>Kategori: <?= $berita['kategori'] ?></td></tr>
     </table>
   </div>
+
+  <?php if(isset($berita['gambar'])){?>
+    <img style="width: 60%; margin-top: 10px; margin-right: auto; margin-left: auto; height: auto;" src='./image/news/<?= $berita['gambar']?>'/>          
+  <?php } else {?>
+    <img style="width: 60%; margin-top: 10px; margin-right: auto; margin-left: auto; height: auto;" src='./image/News2.jpg'/>  
+  <?php } ?>
+
   <div class="card container" style="width: 60%; margin-top: 1%; z-index: -1;">
     <?= $berita['konten'] ?>
   </div>
+
   <div class="container" style="width: 90%">
     <h3>Komentar</h3>
     <div>
