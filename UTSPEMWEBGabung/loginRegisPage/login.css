@@ -307,6 +307,16 @@ input[type="file"] {
     min-height: 800px;
     height: 100vh;
   }
+
+  .title{
+    text-align: center;
+  }
+
+  .btn{  
+    margin: 2% auto;
+    text-align: center;
+  }
+
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -403,11 +413,22 @@ input[type="file"] {
     top: 5%;
     transform: translate(-50%, 0);
   }
+
+  #form-login-submit{height:500px;overflow-y:auto; display:grid;}
 }
 
 @media (max-width: 570px) {
   form {
     padding: 0 1.5rem;
+  }
+
+  .title{
+    text-align: center;
+  }
+
+  .btn{  
+    margin: 2% auto;
+    text-align: center;
   }
 
   .image {
@@ -431,6 +452,7 @@ input[type="file"] {
   }
   #form-login-submit{height:500px;overflow-y:auto; display:grid;}
 }
+
 
 @media only screen and (min-width: 768px){
   .captchaText{
